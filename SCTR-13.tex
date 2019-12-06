@@ -1,0 +1,675 @@
+\documentclass[SE,lsstdraft,STR,toc]{lsstdoc}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{enumitem}
+\usepackage{arydshln}
+
+\input meta.tex
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\def\milestoneName{Ccw + Camera Rotator Interface Verification On Camera Cart}
+\def\milestoneId{LVV-P58}
+\def\product{SIT-COM Integration}
+
+\setDocCompact{true}
+
+\title{ LVV-P58 Ccw + Camera Rotator Interface Verification On Camera Cart Test Plan and Report}
+\setDocRef{\lsstDocType-\lsstDocNum}
+\date{\vcsdate}
+\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
+\author{ Austin Roberts }
+
+\input history_and_info.tex
+
+
+\setDocAbstract{
+This is the test plan and report for LVV-P58 (Ccw + Camera Rotator Interface Verification On Camera Cart),
+an LSST milestone pertaining to the System Engineering Subsystem.
+}
+
+
+\maketitle
+
+\section{Introduction}
+\label{sect:intro}
+
+
+\subsection{Objectives}
+\label{sect:objectives}
+
+The purpose of this test plan is to verify combined control and combined
+interlocks of the Camera Rotator integrated with the Camera Cable Wrap
+at the Summit facility, as defined in \citeds{LTS-160}, \citeds{LTS-206} and \citeds{LTS-218}. The
+combined control will be accomplished through SAL v4.0 utilizing the
+LSST pointing component and Jupyter notebooks. This following criteria
+must be met in order to execute this test campaign:
+
+\begin{itemize}
+\tightlist
+\item
+  Requires the use of the encoders and a laser tracker only
+\item
+  Does \textbf{NOT} require the camera rotator to be loaded with the
+  camera simulated mass or actual camera hardware
+\end{itemize}
+
+
+
+\subsection{System Overview}
+\label{sect:systemoverview}
+
+The Camera Cable Wrap is mounted to one side of the Integrating
+Structure with the Camera Hexapod and Rotator installed on the other
+side of the Integrating Structure. This assembly is mounted onto the
+Camera Cart when it is off of the telescope. The primary function of the
+Camera Cable Wrap is to rotate in a synchronous fashion with the Camera
+Rotator to prevent the utilities from getting damaged.
+
+
+\subsection{Document Overview}
+\label{sect:docoverview}
+
+This document was generated from Jira, obtaining the relevant information from the 
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testPlan/LVV-P58}{LVV-P58}
+~Jira Test Plan and related Test Cycles (
+  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C109}{LVV-C109}
+).
+
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}), the applicable documentation, and explains how this document is organized.
+Section \ref{sect:configuration}  describes the configuration used for this test.
+Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
+%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases, including all relevant information that fully describes the test campaign.
+
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary}, an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
+
+The current status of test plan LVV-P58 in Jira is \textbf{ Draft }.
+
+\subsection{References}
+\label{sect:references}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads,local}
+\section{Test Configuration}
+\label{sect:configuration}
+
+\subsection{Data Collection}
+
+  Observing is not required for this test campaign.
+
+\subsection{Verification Environment}
+\label{sect:hwconf}
+  The Camera Rotator integrated with the Camera Hexapod and Camera Cable
+Wrap on the Camera Cart will be verified in a climate controlled
+environment on the 3rd floor of the Summit Facility.
+
+
+  \subsection{Entry Criteria}
+  In order to test the Camera Rotator + CCW functionality, the following
+criteria must be met first:
+
+\begin{itemize}
+\tightlist
+\item
+  The Camera Rotator's functionality and interlocks have been verified
+  to be operational after delivery to the Summit from the vendor
+\item
+  The Camera Rotator's software has been updated by LSST to be SAL v4.0
+  compatible
+\item
+  The Camera Cable Wrap functionality and interlocks have been verified
+  to be operational after delivery to the Summit from the vendor
+\item
+  The Camera Cable Wrap software has been updated by LSST to be SAL v4.0
+  compatible
+\end{itemize}
+
+
+  \subsection{Exit Criteria}
+  In order for this event to be considered complete, the following
+criteria must be met:
+
+\begin{itemize}
+\tightlist
+\item
+  Raw test data, events, and telemetry have been saved for both the
+  Camera Rotator and the CCW.
+\item
+  All test data has been analyzed and post processed.
+\item
+  All test steps have been statused in the Jira Test Cases within this
+  Test Plan and actual results populated as required.
+\item
+  A summary of the results of the test campaign has been captured in the
+  Overall Assessment and Recommended Improvements fields of this Test
+  Plan
+\item
+  A link to the verification artifacts used to produce the summary of
+  results has been populated in the Verification Artifacts field of this
+  Test Plan
+\item
+  Any failures have been captured in the
+  \href{https://jira.lsstcorp.org/projects/FRACAS/issues/}{FRACAS}
+  project
+\end{itemize}
+
+
+  \subsection{PMCS Activity}
+  See Epics in Traceability Tab
+
+
+\newpage
+\section{Personnel}
+\label{sect:personnel}
+
+The personnel involved in the test campaign is shown in the following table.
+
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{Test Plan (LVV-P58) owner:} &
+\multicolumn{2}{l}{\textbf{ Austin Roberts } }\\\hline
+\multicolumn{2}{r}{ LVV-C109 owner:} &
+\multicolumn{2}{l}{\textbf{
+    Undefined
+}
+} \\\hline
+\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1567}{LVV-T1567}
+& {\small Kevin Siruno } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small (1) Software Engineer\\
+(1) Hardware Engineer
+ }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1569}{LVV-T1569}
+& {\small Kevin Siruno } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small (1) Software Engineer\\
+(1) Hardware Engineer\\
+(1) Systems Engineer
+ }
+\medskip
+\end{minipage}
+\\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1588}{LVV-T1588}
+& {\small Kevin Siruno } & {\small  } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small (1) Software Engineer\\
+(1) Hardware Engineer\\
+(1) Systems Engineer
+ }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
+
+\newpage
+
+\section{Test Campaign Overview}
+\label{sect:overview}
+
+\subsection{Summary}
+\label{sect:summarytable}
+
+\begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
+\toprule
+\multicolumn{3}{l}{ Test Plan {\bf LVV-P58: CCW + Camera Rotator Interface Verification on Camera Cart
+ }} & Draft \\\hline
+
+  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C109: Camera Rotator + CCW Integration
+ }} & Not Executed \\\hline
+
+  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
+
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1567}{LVV-T1567}
+    & Not Executed &
+    \begin{minipage}[]{9cm}
+    \smallskip
+    
+    \medskip
+    \end{minipage}
+    &
+    \\\hline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1569}{LVV-T1569}
+    & Not Executed &
+    \begin{minipage}[]{9cm}
+    \smallskip
+    
+    \medskip
+    \end{minipage}
+    &
+    \\\hline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1588}{LVV-T1588}
+    & Not Executed &
+    \begin{minipage}[]{9cm}
+    \smallskip
+    
+    \medskip
+    \end{minipage}
+    &
+    \\\hline
+\caption{Test Results Summary}
+\label{table:summary}
+\end{longtable}
+
+\subsection{Overall Assessment}
+\label{sect:overallassessment}
+
+Not yet available.
+
+\subsection{Recommended Improvements}
+\label{sect:recommendations}
+
+Not yet available.
+
+\newpage
+\section{Detailed Test Results}
+\label{sect:detailedtestresults}
+
+\subsection{Test Cycle LVV-C109 }
+
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C109}{Camera Rotator + CCW Integration
+}} in Jira.
+
+Camera Rotator + CCW Integration
+\\
+Status: Not Executed
+
+This test cycle will encompass all the test cases pertaining to the
+testing of the CCW Integration with the Camera rotator and the camera
+cart.
+
+
+\subsubsection{Software Version/Baseline}
+Not provided.
+
+\subsubsection{Configuration}
+Not provided.
+
+\subsubsection{Test Cases in LVV-C109 Test Cycle}
+
+\paragraph{Test Case LVV-T1567 - Integration of Camera Rotator with SAL 4.0 (MOOG)
+ }\mbox{}\\
+
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1567}{\textit{ LVV-T1567 } }
+test case in Jira.
+
+The objective of this test case is to verify the software requirements
+of the camera rotator integrated with SAL 4.0 as defined in \citeds{LTS-160} \&
+\citeds{LTS-206}. This test case will only exercise the functionality that was
+executed previously and meets the following criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Requires the rotator to be operable
+\item
+  Requires the Camera Rotator to able to receive commands from SAL 4.0
+\item
+  Does \textbf{NOT~}require the rotator to be loaded with the camera
+  simulated mass or actual camera hardware
+\end{itemize}
+
+The software functional requirements were previously re-verified during
+a test campaign at the Summit without the use of SAL. The test procedure
+used during the re-verification testing was the \emph{LSST
+Hexapods-Rotator Software Acceptance Test Procedure.~}This test is meant
+to confirm that the Camera Rotator is functioning correctly with the new
+version of SAL. The test steps of this test case are taken directly from
+that document on how to perform the test in a similar way as was
+performed previously and includes changes noted by the
+vendor.\\[2\baselineskip]See the attached \emph{LSST Rotator Operator's
+Manual} for more information on how to operate the rotator.
+
+
+\textbf{ Preconditions}:\\
+Prior to the execution of this test case, the following Summit tasks
+must be completed:
+
+\begin{itemize}
+\tightlist
+\item
+  The functional testing of the Camera Rotator Hardware~
+
+  \begin{itemize}
+  \tightlist
+  \item
+    h\href{https://jira.lsstcorp.org/browse/SUMMIT-3370}{ttps://jira.lsstcorp.org/browse/SUMMIT-3370}
+  \end{itemize}
+\item
+  The functional testing of the Camera Rotator Software without SAL
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3371}
+  \end{itemize}
+\item
+  The Camera hexapod/rotator has been connected to the electronics
+  cabinets and the connections have been tested
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3294}
+  \end{itemize}
+\item
+  The Hexapod and Rotator have been installed on camera cart
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3224}
+  \end{itemize}
+\item
+  The cables and cabinets have been checked
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3231}
+  \end{itemize}
+\end{itemize}
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
+
+
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Status: \textbf{ Not Executed } \\ \hline
+
+\end{longtable}
+
+\paragraph{Test Case LVV-T1569 - Integrated CCW + HR Interlock Test
+ }\mbox{}\\
+
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1569}{\textit{ LVV-T1569 } }
+test case in Jira.
+
+The objective of this test case is to verify the interlocks of the
+integrated CCW and Camera Rotator. This test case will exercise the
+functionality of the combined interlock system between the CCW and the
+Camera Rotator and meets the following criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Requires CCW AUX IS to be connected to the Camera Rotator IS
+\item
+  Requires WOBBLE assembly to be electrically and mechanically connected
+\item
+  Does \textbf{NOT} require the camera rotator to be loaded with the
+  camera simulated mass or actual camera hardware
+\item
+  Does \textbf{NOT~}require CCW and Camera Rotator to be under combined
+  control
+\end{itemize}
+
+The interlock system requirements for the Camera Rotator were previously
+verified during the software functional re-verification test at the
+summit facility. The test procedure used during the re-verification
+testing is the \emph{LSST Hexapods-Rotator Software Acceptance Test
+Procedure} which is attached to this test case. This includes the
+procedure that covered how the interlocks were triggered for the Camera
+Rotator, however it is a different configuration with the CCW
+integrated.
+
+
+\textbf{ Preconditions}:\\
+Prior to the execution of this test case to verify the interlocks of the
+CCW + HR, the following Summit tasks must be completed:\\
+
+\begin{itemize}
+\tightlist
+\item
+  The CCW has been installed on the Camera Cart
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-2156}
+  \end{itemize}
+\item
+  The functional testing of the Camera Rotator Hardware~
+
+  \begin{itemize}
+  \tightlist
+  \item
+    h\href{https://jira.lsstcorp.org/browse/SUMMIT-3370}{ttps://jira.lsstcorp.org/browse/SUMMIT-3370}
+  \end{itemize}
+\item
+  The functional testing of the Camera Rotator Software without SAL
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3371}
+  \end{itemize}
+\item
+  The Camera rotator has been connected to the electronics cabinets and
+  the connections have been tested
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3294}
+  \end{itemize}
+\item
+  The Hexapod and Rotator have been installed on camera cart
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3224}
+  \end{itemize}
+\item
+  The cables and cabinets have been checked
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3231}
+  \end{itemize}
+\end{itemize}
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
+
+
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Status: \textbf{ Not Executed } \\ \hline
+
+\end{longtable}
+
+\paragraph{Test Case LVV-T1588 - Pointing Component Control Test
+ }\mbox{}\\
+
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1588}{\textit{ LVV-T1588 } }
+test case in Jira.
+
+The objective of this test case is to verify the combined control of the
+integrated CCW and Camera Rotator via the LSST pointing component as
+specified in \citeds{LTS-218}. This test case will exercise the functionality of
+the synchronized CCW and Camera Rotator during tracking and move
+commands and meeting the following criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Does \textbf{NOT} require the Camera Rotator to be loaded with the
+  camera simulated mass or actual camera hardware
+\end{itemize}
+
+This test case will execute 4 scenarios:
+
+\begin{enumerate}
+\tightlist
+\item
+  Basic Control Scenario
+\item
+  High Rotation Stress Test Scenario
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Full operational range of motion from +90 to -90
+  \end{itemize}
+\item
+  Filter Change Scenario
+\item
+  Typical Night
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Verify the CCW does not rotate during exposure
+  \item
+    Execute an extended exposure
+  \end{itemize}
+\end{enumerate}
+
+
+\textbf{ Preconditions}:\\
+Prior to the execution of this test case to verify the pointing
+component of the CCW + Camera Rotator, the following Summit tasks must
+be completed:
+
+\begin{itemize}
+\tightlist
+\item
+  The CCW has been installed on the Camera Cart
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-2156}
+  \end{itemize}
+\item
+  The Camera Hexapod/Rotator Controller has been deployed on the summit
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3229}
+  \end{itemize}
+\item
+  The Combined Motion of the CCW + Rotator has been verified to be in
+  sync
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://jira.lsstcorp.org/browse/SUMMIT-3295}
+  \end{itemize}
+\end{itemize}
+
+
+Execution status: {\bf Not Executed }
+
+Final comment:\\
+
+
+Detailed steps results:
+
+\begin{longtable}{p{1cm}p{15cm}}
+\hline
+{Step} & Step Details\\ \hline
+1 & Description \\
+ & \begin{minipage}[t]{15cm}
+{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage}
+\\ \cdashline{2-2}
+
+
+ & Expected Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Actual Result \\
+ & \begin{minipage}[t]{15cm}{\footnotesize
+\smallskip
+
+\medskip }
+\end{minipage} \\ \cdashline{2-2}
+
+ & Status: \textbf{ Not Executed } \\ \hline
+
+\end{longtable}
+
+
+\input{appendix.tex}
+\end{document}
