@@ -350,7 +350,7 @@ system:
   {[}Camera Rotator{]} Update the logging messages of the Camera Rotator
   GUI so that it is easier to read
 \item
-  {[}Camera Rotator{]}~{Update the new rotator CSC to allow changes to
+  {[}Camera Rotator{]} {Update the new rotator CSC to allow changes to
   be made to the configuration file}
 \item
   {[}Camera Rotator{]} Update tracking in Simulink model for following
@@ -380,13 +380,19 @@ system:
   {[}CCW{]} Review SAL command set i.e. positionSet, move,
   configureVelocity, configureAcceleration
 \item
-  {[}CCW{]} Polling vs. Callback
+  {[}CCW{]} Update to use callback method over the current polling
+  method
 \item
-  {[}CCW{]} Acknowledgement Fixes
+  {[}CCW{]} Fix for proper acknowledgements of commands
 \item
-  {[}CCW{]} GUI DDS Lockout
+  {[}CCW{]} Determine whether the EUI should be able to take control
+  back from SAL at ANY state or only in some states
 \item
-  {[}CCW{]} Park and Stow Command
+  {[}CCW{]} Add Park and Stow Command
+\item
+  {[}CCW{]} Configure the EFD at Tekniker's site to have a teststand
+  environment that has all components that will be used on the summit to
+  operate the CCW and Camera Rotator
 \end{itemize}
 
 
@@ -3537,7 +3543,8 @@ connected. }\\[2\baselineskip]
 The locking pin was reinserted.\\[2\baselineskip]For the EFD plot of the
 final run of the Interlock Test, see the attached picture or follow the
 link:\\
-\url{https://summit-chronograf-efd.lsst.codes/sources/1/dashboards/10?tempVars\%5Btest_start\%5D=START\%20-\%20Interlock\%20Rotator_CCW\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20Interlock\%20Rotator_CCW\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m}
+\includegraphics[width=5.20833in]{jira_imgs/1084.png}\\
+\url{https://chronograf-summit-efd.lsst.codes/sources/1/dashboards/6?tempVars\%5Btest_start\%5D=START\%20-\%20Interlock\%20Rotator_CCW\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20Interlock\%20Rotator_CCW\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -4170,7 +4177,8 @@ The Jupyter notebook controls the system to run through the steps below.
 We successfully ran the Jupyter notebook which allowed proper control of
 the system.\\[2\baselineskip]For the EFD plot of the final run of the
 E-STop Test, see the attached picture or follow the link:\\
-\url{https://summit-chronograf-efd.lsst.codes/sources/1/dashboards/10?tempVars\%5Btest_start\%5D=START\%20-\%20E-Stop\%20MTPtg_Rotator_CCW\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20E-Stop\%20MTPtg_Rotator_CCW\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m}
+\includegraphics[width=5.20833in]{jira_imgs/1085.png}\\
+\url{https://chronograf-summit-efd.lsst.codes/sources/1/dashboards/6?tempVars\%5Btest_start\%5D=START\%20-\%20E-Stop\%20MTPtg_Rotator_CCW\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20E-Stop\%20MTPtg_Rotator_CCW\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m\#}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -4788,18 +4796,9 @@ The Jupyter notebook controls the system to run through the steps below.
  & \begin{minipage}[t]{15cm}{\footnotesize
 \smallskip
 The Jupyter notebook was run successfully and allowed control of the
-system.\\[2\baselineskip]See the attached from the picture Basic Track
-Test Scenario\\
-
-\begin{itemize}
-\tightlist
-\item
-  START - Basic MTPtg/Rotator Integration Test,``\,`2019-12-12
-  18:32:00'\,''
-\item
-  END - Basic MTPtg/Rotator Integration Test,``\,`2019-12-12
-  18:34:00'\,''
-\end{itemize}
+system.\\[2\baselineskip]See the attached picture from the Basic Track
+Test Scenario or follow the link:\\
+\includegraphics[width=5.20833in]{jira_imgs/1087.png}\url{https://chronograf-summit-efd.lsst.codes/sources/1/dashboards/6?tempVars\%5Btest_start\%5D=START\%20-\%20Basic\%20MTPtg\%2FRotator\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20Basic\%20MTPtg\%2FRotator\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m\#}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -5017,16 +5016,9 @@ The Jupyter notebook controls the system to run through the steps below.
 \smallskip
 The Jupyter notebook was successfully run and correctly controls the
 system.\\[2\baselineskip]See the attached picture of the High Rotation
-Stress Test Scenario
-
-\begin{itemize}
-\tightlist
-\item
-  START - High Rotation Stress Test,``1576177507598000000''
-\item
-  END - High Rotation Stress Test,``1576177735793000000''\\
-  \includegraphics[width=5.20833in]{jira_imgs/1083.png}
-\end{itemize}
+Stress Test Scenario or follow the link:\\
+\includegraphics[width=5.20833in]{jira_imgs/1083.png}\\
+\url{https://chronograf-summit-efd.lsst.codes/sources/1/dashboards/6?tempVars\%5Btest_start\%5D=START\%20-\%20High\%20Rotation\%20Stress\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20High\%20Rotation\%20Stress\%20Test\&lower=now\%28\%29\%20-\%2015m\#}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -5229,17 +5221,9 @@ The Jupyter notebook controls the system to run through the steps below.
 \smallskip
 The Jupyter notebook was successfully run and correctly controls the
 system.\\[2\baselineskip]See the attached picture of the Filter Change
-Test Scenario
-
-\begin{itemize}
-\tightlist
-\item
-  START - Filter Change MTPtg\_Rotator\_CCW Integration
-  Test,``1576173952305000000''
-\item
-  END - Filter Change MTPtg\_Rotator\_CCW Integration
-  Test,``1576174299015000000''
-\end{itemize}
+Test Scenario or follow the link:\\
+\includegraphics[width=5.20833in]{jira_imgs/1086.png}\\
+\url{https://chronograf-summit-efd.lsst.codes/sources/1/dashboards/6?tempVars\%5Btest_start\%5D=START\%20-\%20Filter\%20Change\%20MTPtg_Rotator_CCW\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20Filter\%20Change\%20MTPtg_Rotator_CCW\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m\#}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -5660,7 +5644,9 @@ The Jupyter notebook controls the system run through the steps below.
 \smallskip
 The Jupyter notebook was successfully run and correctly controls the
 system.\\[2\baselineskip]See the attached picture of the Observing Night
-Scenario from 2019-12-13 14:56:55 - 14:58:30
+Scenario or follow the link:\\
+\includegraphics[width=5.20833in]{jira_imgs/1088.png}\\
+\url{https://chronograf-summit-efd.lsst.codes/sources/1/dashboards/6?tempVars\%5Btest_start\%5D=START\%20-\%20Rotator\%20Night\%20Observing\%20Integration\%20Test\&tempVars\%5Btest_end\%5D=END\%20-\%20Rotator\%20Night\%20Observing\%20Integration\%20Test\&lower=now\%28\%29\%20-\%2015m}
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
