@@ -9,6 +9,8 @@
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+\setcounter{tocdepth}{4}
+
 \begin{document}
 
 \def\milestoneName{Ccw + Camera Rotator Interface Verification On Camera Cart}
@@ -281,7 +283,7 @@ The personnel involved in the test campaign is shown in the following table.
           \href{https://jira.lsstcorp.org/browse/FRACAS-26}{FRACAS-26}
           \href{https://jira.lsstcorp.org/browse/FRACAS-26}{FRACAS-26}
     \\\hline
-\caption{Test Results Summary}
+\caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
 
@@ -523,7 +525,6 @@ Detailed steps results:
 1 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STARTING THE EUI}\\[2\baselineskip]Double click the Hexapod GUI
 Viewer desktop icon on the computer.
 
@@ -541,7 +542,6 @@ Viewer desktop icon on the computer.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A prompt to enter a password is shown.~
 
 \medskip }
@@ -549,7 +549,6 @@ A prompt to enter a password is shown.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The GUI was used from another computer on the same network.
 
 \medskip }
@@ -560,7 +559,6 @@ The GUI was used from another computer on the same network.
 2 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Enter the password ``lsst-vnc''
 
 \begin{itemize}
@@ -578,7 +576,6 @@ Enter the password ``lsst-vnc''
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI is in the Offline State/PublishOnly substate and is able to
 publish through SAL but cannot receive commands.
 
@@ -587,7 +584,6 @@ publish through SAL but cannot receive commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI was unable to receive SAL commands in the Offline
 State/PublishOnly
 
@@ -599,7 +595,6 @@ State/PublishOnly
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE/AVAILABLESTATE}\\
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
@@ -613,7 +608,6 @@ Ready'' and click on the Send Command button.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the OfflineState/PublishOnly substate to the
 OfflineState/AvailableState
 substate.\\[2\baselineskip]\includegraphics[width=1.79167in]{jira_imgs/1007.png}
@@ -623,7 +617,6 @@ substate.\\[2\baselineskip]\includegraphics[width=1.79167in]{jira_imgs/1007.png}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 In the OfflineState/AvailableState substate, the system was able to
 receive/respond to DDS commands.
 
@@ -635,7 +628,6 @@ receive/respond to DDS commands.
 4 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{SWITCHING TO DDS MODE}\\
 \includegraphics[width=1.79167in]{jira_imgs/1014.png}\\
 If the Command Source does not show DDS, go to the Parameters tab,
@@ -653,7 +645,6 @@ Source must show DDS in order to receive DDS commands.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system is capable of receiving/responding to DDS commands.
 
 \medskip }
@@ -661,7 +652,6 @@ The system is capable of receiving/responding to DDS commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 When the command source was switched to DDS, we were able to command the
 system remotely.
 
@@ -673,7 +663,6 @@ system remotely.
 5 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
 The system receives an \emph{enterControl State Transition} command
 through DDS.
@@ -685,7 +674,6 @@ through DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the StandbyState and is capable of
 receiving/responding to DDS commands.\\
 \includegraphics[width=4.68750in]{jira_imgs/1018.png}
@@ -695,7 +683,6 @@ receiving/responding to DDS commands.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We were able to transition the system into the StandbyState through the
 DDS.
 
@@ -707,7 +694,6 @@ DDS.
 6 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
 From the StandbyState, send a \emph{start} command through the DDS.
 
@@ -718,7 +704,6 @@ From the StandbyState, send a \emph{start} command through the DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into DisabledState after receiving/responding to
 DDS command and the wrapper in the PXI real time controller looks for
 the configuration file.\\
@@ -731,7 +716,6 @@ transition into a Fault State
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We were able to transition the system into the DisabledState through the
 DDS.
 
@@ -743,7 +727,6 @@ DDS.
 7 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
 From the DisabledState, send an \emph{enable state} command through the
 DDS.
@@ -755,7 +738,6 @@ DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the EnabledState/Stationary substate, the
 motor drives are enabled, motor brakes are released and the system is
 capable of receiving/responding to DDS commands.\\
@@ -766,7 +748,6 @@ capable of receiving/responding to DDS commands.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We were able to transition the system into the EnabledState using the
 DDS and command movement to the Camera Rotator.
 
@@ -778,7 +759,6 @@ DDS and command movement to the Camera Rotator.
 8 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{FAULTSTATE}\\
 If a Fault occurs in any of the other states, the system will
 automatically transition to the Fault State. While in the Fault state,
@@ -793,7 +773,6 @@ the safety relay switch and send a \emph{clearError} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions back to the OfflineState/PublishOnly substate and
 is not capable of receiving/responding to DDS commands. (Go back to Step
 3)\\
@@ -804,7 +783,6 @@ is not capable of receiving/responding to DDS commands. (Go back to Step
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 When the system experiened a ``SMLNK fault declared'', we were able to
 use the \emph{clearError~}command through the DDS to bring it back to
 Offline State.
@@ -817,7 +795,6 @@ Offline State.
 9 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{GUI vs DDS Control}\\[2\baselineskip]While in DDS mode, send a
 command from the EUI to test if an EUI user may take over control of the
 camera rotator.
@@ -829,7 +806,6 @@ camera rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system switches from DDS mode to GUI mode. The user must switch back
 to the DDS Command Source through the GUI for the system to be
 controlled through the CSC again.
@@ -839,7 +815,6 @@ controlled through the CSC again.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -849,7 +824,6 @@ controlled through the CSC again.
 10 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Back To DDS Mode}\\
 While the system is in GUI mode, go to the Parameters tab, select DDS
 under the Command Source and click the Set Command Source
@@ -862,7 +836,6 @@ button\textbf{.~}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system is capable of receiving/responding to DDS commands.
 
 \medskip }
@@ -870,7 +843,6 @@ The system is capable of receiving/responding to DDS commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 When the Command Source was switched to DDS, the system was able to
 receive/respond to DDS commands.
 
@@ -882,12 +854,11 @@ receive/respond to DDS commands.
 11 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.2 of the attached Software Acceptance Test
 Procedure\\
-Test Sequence \#1 -- PositionSet and Move Commands}\\[2\baselineskip]In
-the Enabled/Stationary state, send a \emph{positionSet} command of 12
-deg.
+Test Sequence \#1 â\euro{}`` PositionSet and Move
+Commands}\\[2\baselineskip]In the Enabled/Stationary state, send a
+\emph{positionSet} command of 12 deg.
 
 \medskip }
 \end{minipage}
@@ -896,7 +867,6 @@ deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -904,7 +874,6 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator did not move.
 
 \medskip }
@@ -915,7 +884,6 @@ The Camera Rotator did not move.
 12 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{positionSet} command of 15deg.
 
 \medskip }
@@ -925,7 +893,6 @@ Send a \emph{positionSet} command of 15deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -933,7 +900,6 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator did not move.
 
 \medskip }
@@ -944,7 +910,6 @@ The Camera Rotator did not move.
 13 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{move} command.\\[2\baselineskip]
 
 \medskip }
@@ -954,7 +919,6 @@ Send a \emph{move} command.\\[2\baselineskip]
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator moves to 15deg and an \emph{inPosition} event
 is generated when the move is complete.
 
@@ -963,7 +927,6 @@ is generated when the move is complete.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator moved to 15 degrees and while the
 \emph{inPosition~}event was published with the inPosition parameter set
 to\emph{~}True, the \emph{inPosition~}event was published with the
@@ -974,7 +937,6 @@ inPosition parameter was immediately set to\emph{~False.}
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18471}{LVV-18471}~~The inPosition parameter immediately publishes False after True
 
 \medskip }
@@ -984,7 +946,6 @@ inPosition parameter was immediately set to\emph{~False.}
 14 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Record the corresponding DDS events that were generated.
 
 \medskip }
@@ -994,7 +955,6 @@ Record the corresponding DDS events that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1009,7 +969,6 @@ Record the corresponding DDS events that were generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The GUI displayed MOVING\_POINT\_TO\_POINT while the Camera Rotator was
 moving and displayed the STATIONARY state when the position reached 15
 degrees.
@@ -1022,7 +981,6 @@ degrees.
 15 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.2 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#2 - Stop Command}\\[2\baselineskip]In the
@@ -1035,7 +993,6 @@ Enabled/Stationary state, send a \emph{positionSet} command of 50 deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the rotator does not move.
 
 \medskip }
@@ -1043,7 +1000,6 @@ Confirm that the rotator does not move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator did not move.
 
 \medskip }
@@ -1054,7 +1010,6 @@ The Camera Rotator did not move.
 16 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{move} command.
 
 \medskip }
@@ -1064,7 +1019,6 @@ Send a \emph{move} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The rotator starts its rotation.
 
 \medskip }
@@ -1072,7 +1026,6 @@ The rotator starts its rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator began is movement to 50degrees.
 
 \medskip }
@@ -1083,7 +1036,6 @@ The Camera Rotator began is movement to 50degrees.
 17 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 While the rotator is still moving, send a \emph{Stop} command.
 
 \medskip }
@@ -1093,7 +1045,6 @@ While the rotator is still moving, send a \emph{Stop} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the system quickly comes to a stop before reaching the 50
 deg position.
 
@@ -1102,7 +1053,6 @@ deg position.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator stopped at 33 degrees.
 
 \medskip }
@@ -1113,7 +1063,6 @@ The Camera Rotator stopped at 33 degrees.
 18 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{positionSet} command of 60 deg followed by a \emph{move}
 command.
 
@@ -1124,7 +1073,6 @@ command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the rotator moves to the commanded position following the
 previous stop command.
 
@@ -1133,7 +1081,6 @@ previous stop command.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator moved to 60 degrees after being stopped at 33
 degrees.
 
@@ -1145,7 +1092,6 @@ degrees.
 19 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Record the corresponding DDS events that were generated.
 
 \medskip }
@@ -1155,7 +1101,6 @@ Record the corresponding DDS events that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1170,7 +1115,6 @@ Record the corresponding DDS events that were generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The substate changed to CONTROLLED\_STOPPING when the \emph{stop} was
 requested but still moving and then STATIONARY when the rotator was
 stopped.
@@ -1183,7 +1127,6 @@ stopped.
 20 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Test of trackStart and track command}\\[2\baselineskip]In the
 Enabled state, send a \emph{trackStart} command. Do not send a
 \emph{Track} command.
@@ -1195,7 +1138,6 @@ Enabled state, send a \emph{trackStart} command. Do not send a
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The cRIO goes into FAULT state without moving at all.
 
 \medskip }
@@ -1203,7 +1145,6 @@ The cRIO goes into FAULT state without moving at all.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 12/9- The Camera Rotator did not FAULT, still moved to 10 degrees and
 continued to slowly move toward 0 degrees without a \emph{Track~}command
 being sent.\\[2\baselineskip]12/10- Our assumption is that whatever the
@@ -1217,7 +1158,6 @@ cRio continues to calculate the trajectory from the previous command.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18474}{LVV-18474}~~System does not fault when sent a trackStart without a track command
 
 \medskip }
@@ -1227,7 +1167,6 @@ cRio continues to calculate the trajectory from the previous command.
 21 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.2 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#4 - Track and TrackStart Commands}\\[2\baselineskip]In
@@ -1240,7 +1179,6 @@ the Enabled/Stationary state, send a \emph{trackStart} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the system transitions into Enabled/Slewing and Tracking
 state.
 
@@ -1249,7 +1187,6 @@ state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system was seen to transition into the SlewAndTracking substate of
 the Enabled state.
 
@@ -1261,7 +1198,6 @@ the Enabled state.
 22 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a series of \emph{track} commands at 20 Hz from
 command\_vector\_set\_A.mat and ensure the system follows the commands
 and sends appropriate tracking and trackLost events.
@@ -1272,7 +1208,6 @@ and sends appropriate tracking and trackLost events.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:} When the \emph{trackStart} command is run, a track
 command must be issued at 10-20Hz until tracking is done. The vendor's
 code reads in a CSV file with tracking conditions when using the
@@ -1287,7 +1222,6 @@ along a sine wave, respectively.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The rotator first slews to meet the commanded path and then tracks that
 path
 
@@ -1296,7 +1230,6 @@ path
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 12/9 - The Camera Rotator continued to track toward +10degrees from the
 previous command and was then commanded to track to -2000degrees which
 set off the negative software limit when the Camera Rotator reached
@@ -1307,7 +1240,6 @@ set off the negative software limit when the Camera Rotator reached
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18474}{LVV-18474}~~System does not fault when sent a trackStart without a track command
 
 \medskip }
@@ -1317,7 +1249,6 @@ set off the negative software limit when the Camera Rotator reached
 23 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Record the corresponding DDS events that were generated.
 
 \medskip }
@@ -1327,7 +1258,6 @@ Record the corresponding DDS events that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1346,7 +1276,6 @@ Record the corresponding DDS events that were generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 12/9 - The Camera Rotator was put into a FAULT state as the negative
 software limit was tripped
 
@@ -1355,7 +1284,6 @@ software limit was tripped
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18474}{LVV-18474}~~System does not fault when sent a trackStart without a track command
 
 \medskip }
@@ -1365,7 +1293,6 @@ software limit was tripped
 24 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.2 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#5 - Track and TrackStart Commands}\\[2\baselineskip]In
@@ -1378,7 +1305,6 @@ the Enabled/Stationary state, send a \emph{trackStart} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the system transitions into Enabled/Slewing and Tracking
 state.
 
@@ -1387,7 +1313,6 @@ state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component was used to command the Camera Rotator to track.
 The system correctly transitioned into the Enabled/SlewingAndTracking
 state.
@@ -1400,7 +1325,6 @@ state.
 25 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a series of \emph{track} commands at 20 Hz from
 command\_vector\_set\_B.mat and ensure the system follows the commands
 and sends appropriate tracking and trackLost events.
@@ -1411,7 +1335,6 @@ and sends appropriate tracking and trackLost events.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{Deviation:} When the \emph{trackStart} command is run, a track
 command must be issued at 10-20Hz until tracking is done. The vendor's
 code reads in a CSV file with tracking conditions when using the
@@ -1426,7 +1349,6 @@ along a sine wave, respectively.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The rotator first slews to meet the commanded path and then tracks that
 path
 
@@ -1435,7 +1357,6 @@ path
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator first moved to -60degrees and continued
 TrackingAndSlewing for 30 seconds before moving back to the
 Enabled/Stationary state.
@@ -1448,7 +1369,6 @@ Enabled/Stationary state.
 26 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Record the corresponding DDS events that were generated.
 
 \medskip }
@@ -1458,7 +1378,6 @@ Record the corresponding DDS events that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1477,7 +1396,6 @@ Record the corresponding DDS events that were generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator correctly entered the SlewingAndTracking when moving
 and Stationary when the move ended.
 
@@ -1489,7 +1407,6 @@ and Stationary when the move ended.
 27 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.2 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#6 - configureVelocity Command}\\[2\baselineskip]In the
@@ -1503,7 +1420,6 @@ deg/s.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the command is rejected for being out of acceptable range.
 
 \medskip }
@@ -1511,7 +1427,6 @@ Confirm that the command is rejected for being out of acceptable range.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The velocity was out of acceptable range and caused the DDS command to
 fail.
 
@@ -1523,7 +1438,6 @@ fail.
 28 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{configureVelocity} command of 0.5 deg/s.
 
 \medskip }
@@ -1533,7 +1447,6 @@ Send a \emph{configureVelocity} command of 0.5 deg/s.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that this command is accepted.
 
 \medskip }
@@ -1541,7 +1454,6 @@ Confirm that this command is accepted.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The velocity was accepted.
 
 \medskip }
@@ -1552,7 +1464,6 @@ The velocity was accepted.
 29 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{positionSet} command to a position 10 deg away from the
 current position. Send a \emph{move} command.
 
@@ -1563,7 +1474,6 @@ current position. Send a \emph{move} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the that move in completed in approximately 20 seconds.
 
 \medskip }
@@ -1571,7 +1481,6 @@ Confirm the that move in completed in approximately 20 seconds.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The move was timed and took approximately 20 seconds to move 10degrees.
 
 \medskip }
@@ -1582,7 +1491,6 @@ The move was timed and took approximately 20 seconds to move 10degrees.
 30 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Record the corresponding DDS events that were generated.
 
 \medskip }
@@ -1592,7 +1500,6 @@ Record the corresponding DDS events that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1609,7 +1516,6 @@ Record the corresponding DDS events that were generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The GUI showed that the system was in Enabled/MovingPt2Pt when moving
 and Stationary when the move ended.~
 
@@ -1621,7 +1527,6 @@ and Stationary when the move ended.~
 31 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.2.2 of the attached Software Acceptance Test
 Procedure\\
 Test Sequence \#7 - configureAcceleration Command}\\[2\baselineskip]In
@@ -1636,7 +1541,6 @@ from the previous test still in effect, send a
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the command is rejected for being out of acceptable range.
 
 \medskip }
@@ -1644,7 +1548,6 @@ Confirm that the command is rejected for being out of acceptable range.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The acceleration was out of acceptable range and caused the DDS command
 to fail.
 
@@ -1656,7 +1559,6 @@ to fail.
 32 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{configureAcceleration} command of 0.05 deg/s\^{}2.
 
 \medskip }
@@ -1666,7 +1568,6 @@ Send a \emph{configureAcceleration} command of 0.05 deg/s\^{}2.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the command is accepted.
 
 \medskip }
@@ -1674,7 +1575,6 @@ Confirm that the command is accepted.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The acceleration was accepted.
 
 \medskip }
@@ -1685,7 +1585,6 @@ The acceleration was accepted.
 33 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{positionSet} command to a position 10 deg away from the
 current position. Send a \emph{move} command.
 
@@ -1696,7 +1595,6 @@ current position. Send a \emph{move} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the that move in completed in approximately 30 seconds.
 
 \medskip }
@@ -1704,7 +1602,6 @@ Confirm the that move in completed in approximately 30 seconds.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The move was timed and took approximately 30 seconds to move 10 degrees.
 
 \medskip }
@@ -1715,7 +1612,6 @@ The move was timed and took approximately 30 seconds to move 10 degrees.
 34 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Record the corresponding DDS events that were generated.
 
 \medskip }
@@ -1725,7 +1621,6 @@ Record the corresponding DDS events that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1742,7 +1637,6 @@ Record the corresponding DDS events that were generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The GUI showed that the system was in Enabled/MovingPt2Pt when moving
 and Stationary when the move ended.
 
@@ -1754,7 +1648,6 @@ and Stationary when the move ended.
 35 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Shutdown the rotator.
 
 \medskip }
@@ -1764,7 +1657,6 @@ Shutdown the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator is shutdown.
 
 \medskip }
@@ -1772,7 +1664,6 @@ Rotator is shutdown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator was shutdown every night by hitting the E-stop,
 verifying this step.
 
@@ -1784,7 +1675,6 @@ verifying this step.
 36 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 3.3.2 of the attached Software Acceptance Test
 Procedure}\\
 \textbf{Rotator Action on State Commands\\
@@ -1798,7 +1688,6 @@ Start up the system.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \begin{itemize}
 \tightlist
 \item
@@ -1815,7 +1704,6 @@ Start up the system.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator was started up every morning after being shut down
 from the previous night.~
 
@@ -1827,7 +1715,6 @@ from the previous night.~
 37 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send the \emph{enterControl} command.
 
 \medskip }
@@ -1837,7 +1724,6 @@ Send the \emph{enterControl} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that the system does not respond to a \emph{EnterControl}
 command over DDS.
 
@@ -1846,7 +1732,6 @@ command over DDS.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system prompted an error stating ``Controller has CSC command
 disabled, use the EUI to enable CSC commands''
 
@@ -1858,7 +1743,6 @@ disabled, use the EUI to enable CSC commands''
 38 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 From the EUI send an offline substate trigger of \emph{systemReady}.
 
 \medskip }
@@ -1868,7 +1752,6 @@ From the EUI send an offline substate trigger of \emph{systemReady}.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm system goes into Offline/Available substate.
 
 \medskip }
@@ -1876,7 +1759,6 @@ Confirm system goes into Offline/Available substate.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system was seen to transition to the Offline/Available substate when
 a~\emph{systemReady}~command was sent from the EUI only.
 
@@ -1888,7 +1770,6 @@ a~\emph{systemReady}~command was sent from the EUI only.
 39 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 From the EUI, select the DDS button to allow the system to receive
 commands from DDS.
 
@@ -1899,7 +1780,6 @@ commands from DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI displays you are in DDS command mode.
 
 \medskip }
@@ -1907,7 +1787,6 @@ The EUI displays you are in DDS command mode.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The command source confirmed that the system was in DDS command mode.
 
 \medskip }
@@ -1918,7 +1797,6 @@ The command source confirmed that the system was in DDS command mode.
 40 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send an \emph{EnterControl} trigger. Record the corresponding DDS
 event(s) that were generated.
 
@@ -1929,7 +1807,6 @@ event(s) that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Offline/Available to Standby state.
 
 \medskip }
@@ -1937,7 +1814,6 @@ Confirm the system transitions from Offline/Available to Standby state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system correctly transitions from the Offline/Available state to the
 Standby state.
 
@@ -1949,7 +1825,6 @@ Standby state.
 41 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{Start} trigger with an invalid filename.
 
 \medskip }
@@ -1959,7 +1834,6 @@ Send a \emph{Start} trigger with an invalid filename.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Verify that the command is rejected and the system does not transition
 out of Standby state.
 
@@ -1968,7 +1842,6 @@ out of Standby state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 With Russell's code, we cannot test this because Russell has all the
 default parameters hardcoded so it doesn't look for a config file.
 
@@ -1980,7 +1853,6 @@ default parameters hardcoded so it doesn't look for a config file.
 42 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{Start} trigger with a valid filename. Record the
 corresponding DDS event(s) that were generated.
 
@@ -1991,7 +1863,6 @@ corresponding DDS event(s) that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Standby to Disabled state and a
 \emph{settingApplied} and \emph{AppliedSettingsMatchStart} = True events
 are generated.
@@ -2001,7 +1872,6 @@ are generated.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 With Russell's code, we cannot test this because Russell has all the
 default parameters hardcoded so it doesn't look for a config file.
 
@@ -2013,7 +1883,6 @@ default parameters hardcoded so it doesn't look for a config file.
 43 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send an \emph{Enable} trigger. Record the corresponding DDS event(s)
 that were generated.
 
@@ -2024,7 +1893,6 @@ that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Disabled to Enabled state.
 
 \medskip }
@@ -2032,7 +1900,6 @@ Confirm the system transitions from Disabled to Enabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system correctly transitioned from the Disabled state to the Enabled
 state following the~\emph{Enable} command.
 
@@ -2044,7 +1911,6 @@ state following the~\emph{Enable} command.
 44 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{Disable} trigger. Record the corresponding DDS event(s)
 that were generated.
 
@@ -2055,7 +1921,6 @@ that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Enabled to Disabled state.
 
 \medskip }
@@ -2063,7 +1928,6 @@ Confirm the system transitions from Enabled to Disabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system correctly transitioned from the Enabled state to the Disabled
 state following the~\emph{Disable} command.
 
@@ -2075,7 +1939,6 @@ state following the~\emph{Disable} command.
 45 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{Standby} trigger. Record the corresponding DDS event(s)
 that were generated.
 
@@ -2086,7 +1949,6 @@ that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Disabled state to Standby state.
 
 \medskip }
@@ -2094,7 +1956,6 @@ Confirm the system transitions from Disabled state to Standby state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system correctly transitioned from the Disabled state to the Standby
 state following the~\emph{Standby}~command.
 
@@ -2106,7 +1967,6 @@ state following the~\emph{Standby}~command.
 46 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{exitControl} trigger. Record the corresponding DDS event(s)
 that were generated.
 
@@ -2117,7 +1977,6 @@ that were generated.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm the system transitions from Standby state to Offline state.
 
 \medskip }
@@ -2125,7 +1984,6 @@ Confirm the system transitions from Standby state to Offline state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system correctly transitioned from the Standby state to the Offline
 state following the~\emph{exitControl}~command.~
 
@@ -2137,7 +1995,6 @@ state following the~\emph{exitControl}~command.~
 47 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Section 5.1 of the attached Software Acceptance Test
 Procedure}\\
 \textbf{Rotator Events\\
@@ -2151,7 +2008,6 @@ motors.
 
  & Test Data \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 \textbf{NOTE:} After each step in this set of steps, we will need to
 send the clearError command to the CSC. This will put the cRIO into
 Offline/PublishOnly. Use the EUI to re-enable CSC control.
@@ -2161,7 +2017,6 @@ Offline/PublishOnly. Use the EUI to re-enable CSC control.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a \emph{Drive Fault} event is created and the system
 transitions to Fault state.
 
@@ -2170,7 +2025,6 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We did not test this because we would need to pull up the schematics for
 the wiring of the camera rotator motors in order to ensure we were
 pulling the correct cables.
@@ -2183,7 +2037,6 @@ pulling the correct cables.
 48 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 In the Enabled state, unplug a linear encoder cable for the rotator.
 
 \medskip }
@@ -2193,7 +2046,6 @@ In the Enabled state, unplug a linear encoder cable for the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a \emph{Linear Encoder Error} event is created and the
 system transitions to Fault state.
 
@@ -2202,7 +2054,6 @@ system transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We did not test this because we would need to pull up the schematics for
 the wiring of the camera rotator motors in order to ensure we were
 pulling the correct cables.
@@ -2215,7 +2066,6 @@ pulling the correct cables.
 49 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Set the Following Error Threshold parameter to a very small value
 (0.0001 deg or smaller) and command a \emph{PositionSet/Move}.
 
@@ -2226,7 +2076,6 @@ Set the Following Error Threshold parameter to a very small value
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a \emph{Following Error} event is created and the system
 transitions to Fault state.
 
@@ -2235,7 +2084,6 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 With Russell's code, we cannot test this because his code does not
 acknowledge the changed Following Error Threshold parameter (from 0.1 to
 0.0001 degrees) in the default file.
@@ -2248,7 +2096,6 @@ acknowledge the changed Following Error Threshold parameter (from 0.1 to
 50 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Activate the positive software limit using a special control program.
 
 \medskip }
@@ -2258,7 +2105,6 @@ Activate the positive software limit using a special control program.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a \emph{Positive Limit Switch} error message is created and
 the system transitions to Fault state.
 
@@ -2267,7 +2113,6 @@ the system transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Due to Russell's code, we could not change the positive software limit
 from +90 degrees so we verified that a track command of +95 degrees was
 rejected.
@@ -2280,7 +2125,6 @@ rejected.
 51 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Activate the negative software limit using a special control program.
 
 \medskip }
@@ -2290,7 +2134,6 @@ Activate the negative software limit using a special control program.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that a \emph{Negative Limit Switch} error message is created and
 the system transitions to Fault State.
 
@@ -2299,7 +2142,6 @@ the system transitions to Fault State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 12/9 - The Negative Limit Switch was tripped at -90.6083degrees and the
 system was transitioned to a FAULT state as a result of the testing of
 the track command (Step 22).\\
@@ -2318,7 +2160,6 @@ degrees so we verified that a track command of -95 degrees was rejected.
 52 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Unplug the Ethercat cable between the control PC and the Copley XE2
 drive.
 
@@ -2329,7 +2170,6 @@ drive.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Confirm that an \emph{Ethercat Problem} event is created and the system
 transitions to Fault state.
 
@@ -2338,7 +2178,6 @@ transitions to Fault state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We did not test this because we would need to pull up the schematics for
 the wiring of the camera rotator motors in order to ensure we were
 pulling the correct cables.
@@ -2351,7 +2190,6 @@ pulling the correct cables.
 53 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Shutdown the rotator.
 
 \medskip }
@@ -2361,7 +2199,6 @@ Shutdown the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Rotator is shutdown.
 
 \medskip }
@@ -2369,7 +2206,6 @@ Rotator is shutdown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 As previously stated, the Camera Rotator is shut down every night
 through the E-stop.
 
@@ -2486,7 +2322,6 @@ Detailed steps results:
 1 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STARTING THE EUI}\\[2\baselineskip]Double click the Hexapod GUI
 Viewer desktop icon on the computer.
 
@@ -2504,7 +2339,6 @@ Viewer desktop icon on the computer.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A prompt to enter a password is shown.~
 
 \medskip }
@@ -2512,7 +2346,6 @@ A prompt to enter a password is shown.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the \emph{Integration of Camera Rotator
 with SAL 4.0 (LSST)} Test Case.
 
@@ -2524,7 +2357,6 @@ with SAL 4.0 (LSST)} Test Case.
 2 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Enter the password ``lsst-vnc''
 
 \begin{itemize}
@@ -2542,7 +2374,6 @@ Enter the password ``lsst-vnc''
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI is in the Offline State/PublishOnly substate and is able to
 publish through SAL but cannot receive commands.
 
@@ -2551,7 +2382,6 @@ publish through SAL but cannot receive commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2563,7 +2393,6 @@ with SAL 4.0 (LSST)~}Test Case.
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE/AVAILABLESTATE}\\
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
@@ -2577,7 +2406,6 @@ Ready'' and click on the Send Command button.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the OfflineState/PublishOnly substate to the
 OfflineState/AvailableState
 substate.\\[2\baselineskip]\includegraphics[width=1.79167in]{jira_imgs/1007.png}
@@ -2587,7 +2415,6 @@ substate.\\[2\baselineskip]\includegraphics[width=1.79167in]{jira_imgs/1007.png}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2599,7 +2426,6 @@ with SAL 4.0 (LSST)~}Test Case.
 4 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{SWITCHING TO DDS MODE}\\
 \includegraphics[width=1.79167in]{jira_imgs/1014.png}\\
 If the Command Source does not show DDS, go to the Parameters tab,
@@ -2617,7 +2443,6 @@ Source must show DDS in order to receive DDS commands.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system is capable of receiving/responding to DDS commands.
 
 \medskip }
@@ -2625,7 +2450,6 @@ The system is capable of receiving/responding to DDS commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2637,7 +2461,6 @@ with SAL 4.0 (LSST)~}Test Case.
 5 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
 The system receives an \emph{enterControl State Transition} command
 through DDS.
@@ -2649,7 +2472,6 @@ through DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the StandbyState and is capable of
 receiving/responding to DDS commands.\\
 \includegraphics[width=4.68750in]{jira_imgs/1018.png}
@@ -2659,7 +2481,6 @@ receiving/responding to DDS commands.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2671,7 +2492,6 @@ with SAL 4.0 (LSST)~}Test Case.
 6 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
 From the StandbyState, send a \emph{start} command through the DDS.
 
@@ -2682,7 +2502,6 @@ From the StandbyState, send a \emph{start} command through the DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into DisabledState after receiving/responding to
 DDS command and the wrapper in the PXI real time controller looks for
 the configuration file.\\
@@ -2695,7 +2514,6 @@ transition into a Fault State
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2707,7 +2525,6 @@ with SAL 4.0 (LSST)~}Test Case.
 7 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
 From the DisabledState, send an \emph{enable state} command through the
 DDS.
@@ -2719,7 +2536,6 @@ DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the EnabledState/Stationary substate, the
 motor drives are enabled, motor brakes are released and the system is
 capable of receiving/responding to DDS commands.\\
@@ -2730,7 +2546,6 @@ capable of receiving/responding to DDS commands.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2742,7 +2557,6 @@ with SAL 4.0 (LSST)~}Test Case.
 8 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{FAULTSTATE}\\
 If a Fault occurs in any of the other states, the system will
 automatically transition to the Fault State. While in the Fault state,
@@ -2757,7 +2571,6 @@ the safety relay switch and send a \emph{clearError} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions back to the OfflineState/PublishOnly substate and
 is not capable of receiving/responding to DDS commands. (Go back to Step
 3)\\
@@ -2768,7 +2581,6 @@ is not capable of receiving/responding to DDS commands. (Go back to Step
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -2780,7 +2592,6 @@ with SAL 4.0 (LSST)~}Test Case.
 9 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Start up the CCW such that it is in the Enabled state.
 \textbf{{(Tekniker)}}
 
@@ -2791,7 +2602,6 @@ Start up the CCW such that it is in the Enabled state.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW is in the Enabled State.
 
 \medskip }
@@ -2799,7 +2609,6 @@ The CCW is in the Enabled State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Tekniker transitioned the CCW into the Enabled State through the CCW
 GUI.
 
@@ -2811,7 +2620,6 @@ GUI.
 10 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{Camera Rotator Interlock}\\[2\baselineskip]With the CCW and the
 Camera Rotator in the Enabled state, but \textbf{NOT} moving, Press the
 E-Stop which is wired in series with the fully retracted limit switches
@@ -2828,7 +2636,6 @@ to simulate the limit switches.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The fault within the Camera Rotator Interlock System disables the Camera
 Rotator and CCW drives by a Safe Torque Off trigger.
 
@@ -2837,7 +2644,6 @@ Rotator and CCW drives by a Safe Torque Off trigger.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was test by hitting the Camera Rotator E-Stop and was verified to
 fault both the CCW and Camera Rotator Interlock System.
 
@@ -2849,7 +2655,6 @@ fault both the CCW and Camera Rotator Interlock System.
 11 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Manually reset the interlock system by cycling the safety reset switch.
 
 \medskip }
@@ -2859,7 +2664,6 @@ Manually reset the interlock system by cycling the safety reset switch.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The safety interlock fault has been cleared in the PILZ controller.
 
 \medskip }
@@ -2867,7 +2671,6 @@ The safety interlock fault has been cleared in the PILZ controller.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The safety switch was reset by simultaneously twisting and pulling up
 the E-Stop button to its original position.
 
@@ -2879,7 +2682,6 @@ the E-Stop button to its original position.
 12 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Transition out of the fault state by sending a \emph{ClearError}
 trigger.
 
@@ -2890,7 +2692,6 @@ trigger.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the Fault state to the Offline/PublishOnly
 State.
 
@@ -2899,7 +2700,6 @@ State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The~\emph{ClearError~}command was sent through both the Camera Rotator
 and CCW GUI in order to transition each out of the Fault state.
 
@@ -2911,7 +2711,6 @@ and CCW GUI in order to transition each out of the Fault state.
 13 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Bring the CCW and the Camera Rotator back to the Enabled state.
 
 \medskip }
@@ -2921,7 +2720,6 @@ Bring the CCW and the Camera Rotator back to the Enabled state.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 CCW and Camera Rotator are in the Enabled state.
 
 \medskip }
@@ -2929,7 +2727,6 @@ CCW and Camera Rotator are in the Enabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator were commanded through their respective GUI's
 to transition back to the Enabled State.
 
@@ -2941,7 +2738,6 @@ to transition back to the Enabled State.
 14 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{CCW Interlock}\\[2\baselineskip]With the CCW and the Camera
 Rotator in the Enabled state, but \textbf{NOT} moving, Press the E-Stop
 which is wired in series with the fully retracted limit switches to
@@ -2954,7 +2750,6 @@ simulate the limit switches.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The fault within the CCW Interlock System disables the Camera Rotator
 and CCW drives by a Safe Torque Off trigger.
 
@@ -2963,7 +2758,6 @@ and CCW drives by a Safe Torque Off trigger.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was test by hitting the CCW E-Stop and was verified to fault both
 the CCW and Camera Rotator Interlock System.
 
@@ -2975,7 +2769,6 @@ the CCW and Camera Rotator Interlock System.
 15 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Manually reset the interlock system by cycling the safety reset switch.
 
 \medskip }
@@ -2985,7 +2778,6 @@ Manually reset the interlock system by cycling the safety reset switch.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The safety interlock fault has been cleared in the PILZ controller.
 
 \medskip }
@@ -2993,7 +2785,6 @@ The safety interlock fault has been cleared in the PILZ controller.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The safety switch was reset by simultaneously twisting and pulling up
 the E-Stop button to its original position.
 
@@ -3005,7 +2796,6 @@ the E-Stop button to its original position.
 16 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Transition out of the fault state by sending a~\emph{ClearError}
 trigger\emph{.}
 
@@ -3016,7 +2806,6 @@ trigger\emph{.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the Fault state to the Offline/PublishOnly
 State.
 
@@ -3025,7 +2814,6 @@ State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system successfully transitioned out the of the Fault state by
 sending a \emph{ClearError} after the interlock was reset.
 
@@ -3037,7 +2825,6 @@ sending a \emph{ClearError} after the interlock was reset.
 17 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Bring the CCW and the Camera Rotator back to the Enabled state.
 
 \medskip }
@@ -3047,7 +2834,6 @@ Bring the CCW and the Camera Rotator back to the Enabled state.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 CCW and Camera Rotator are in the Enabled state.
 
 \medskip }
@@ -3055,7 +2841,6 @@ CCW and Camera Rotator are in the Enabled state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator were commanded through their respective GUI's
 to transition back to the Enabled State.
 
@@ -3067,7 +2852,6 @@ to transition back to the Enabled State.
 18 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {\textbf{Manual Test of the CCW Interlock}\\[2\baselineskip]Remove the
 locking pin from the bar connecting the CCW and the Camera Rotator.}
 
@@ -3078,7 +2862,6 @@ locking pin from the bar connecting the CCW and the Camera Rotator.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The CCW is able to move independently. }
 
 \medskip }
@@ -3086,7 +2869,6 @@ locking pin from the bar connecting the CCW and the Camera Rotator.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3096,7 +2878,6 @@ locking pin from the bar connecting the CCW and the Camera Rotator.}
 19 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Manually twist the bar connected to the CCW in the positive direction
 until the positive limit switch is tripped.}
 
@@ -3107,7 +2888,6 @@ until the positive limit switch is tripped.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The fault triggered on the CCW positive limit switch disables drives
 for both the CCW and the Camera Rotator by a Safe Torque Off trigger.}
 
@@ -3116,7 +2896,6 @@ for both the CCW and the Camera Rotator by a Safe Torque Off trigger.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3126,7 +2905,6 @@ for both the CCW and the Camera Rotator by a Safe Torque Off trigger.}
 20 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Rotate the bar so that it is approximately at 0 degrees.
 
 \medskip }
@@ -3136,7 +2914,6 @@ Rotate the bar so that it is approximately at 0 degrees.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW is midway between the limit switches.
 
 \medskip }
@@ -3144,7 +2921,6 @@ The CCW is midway between the limit switches.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3154,7 +2930,6 @@ The CCW is midway between the limit switches.
 21 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Reset the interlock for the CCW (Tekniker) and Camera Rotator (see step
 1.8 above)}
 
@@ -3165,7 +2940,6 @@ The CCW is midway between the limit switches.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The CCW and Camera Rotator are in the Enabled State.}
 
 \medskip }
@@ -3173,7 +2947,6 @@ The CCW is midway between the limit switches.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3183,7 +2956,6 @@ The CCW is midway between the limit switches.
 22 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Manually twist the bar connected to the CCW in the negative direction
 until the interlock is tripped.}
 
@@ -3194,7 +2966,6 @@ until the interlock is tripped.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The fault triggered on the CCW negative limit switch disables the
 drives on the CCW by a Safe Torque Off Trigger.\\
 }
@@ -3204,7 +2975,6 @@ drives on the CCW by a Safe Torque Off Trigger.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3214,7 +2984,6 @@ drives on the CCW by a Safe Torque Off Trigger.\\
 23 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Rotate the bar so that it is approximately at 0 degrees.
 
 \medskip }
@@ -3224,7 +2993,6 @@ Rotate the bar so that it is approximately at 0 degrees.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW is midway between the limit switches.
 
 \medskip }
@@ -3232,7 +3000,6 @@ The CCW is midway between the limit switches.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3242,7 +3009,6 @@ The CCW is midway between the limit switches.
 24 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Reset the interlock for the CCW (Tekniker) and Camera Rotator (see step
 1.8 above)
 
@@ -3253,7 +3019,6 @@ Reset the interlock for the CCW (Tekniker) and Camera Rotator (see step
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator are in the Enabled State.
 
 \medskip }
@@ -3261,7 +3026,6 @@ The CCW and Camera Rotator are in the Enabled State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 
 \medskip }
 \end{minipage} \\ \cdashline{2-2}
@@ -3271,7 +3035,6 @@ The CCW and Camera Rotator are in the Enabled State.
 25 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{{Pointing Component - Basic Control}}\\
 {Insert the locking pin that so that the CCW moves synchronously to the
 Camera Rotator.}
@@ -3283,7 +3046,6 @@ Camera Rotator.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator move synchronously to each other.
 
 \medskip }
@@ -3291,7 +3053,6 @@ The CCW and Camera Rotator move synchronously to each other.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The locking pin for the temporary linkage between the CCW and the Camera
 Rotator remained inserted.
 
@@ -3303,7 +3064,6 @@ Rotator remained inserted.
 26 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 The following steps define what the Jupyter Notebook for this test case
 implements. Executing the Jupyter notebook is the only actual step that
 needs to be executed.
@@ -3315,7 +3075,6 @@ needs to be executed.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook controls the system to run through the steps below.
 
 \medskip }
@@ -3323,7 +3082,6 @@ The Jupyter notebook controls the system to run through the steps below.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook was run successfully and allowed control of the
 system
 
@@ -3335,7 +3093,6 @@ system
 27 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Bring the Camera Rotator and the Pointing Component to the Enabled
 State.
 
@@ -3346,7 +3103,6 @@ State.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and Pointing Component are in the Enabled State.
 
 \medskip }
@@ -3354,7 +3110,6 @@ The Camera Rotator and Pointing Component are in the Enabled State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and Pointing Component were seen to be in the Enabled
 State through the EFD.
 
@@ -3366,7 +3121,6 @@ State through the EFD.
 28 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{trackStart} command to the rotator.~
 
 \medskip }
@@ -3376,7 +3130,6 @@ Send a \emph{trackStart} command to the rotator.~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator transitions from the Enabled/Stationary state to the
 Enabled/SlewingAndTracking state.
 
@@ -3385,7 +3138,6 @@ Enabled/SlewingAndTracking state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator successfully transitioned into the SlewingAndTracking
 state as seen on the GUI.
 
@@ -3397,7 +3149,6 @@ state as seen on the GUI.
 29 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{track} command via the pointing component to track.
 
 \medskip }
@@ -3407,7 +3158,6 @@ Send a \emph{track} command via the pointing component to track.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator begins to track for 30 seconds.~
 
 \medskip }
@@ -3415,7 +3165,6 @@ The Camera Rotator begins to track for 30 seconds.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW began to move synchronously.
 
 \medskip }
@@ -3426,7 +3175,6 @@ The Camera Rotator and CCW began to move synchronously.
 30 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stopTracking} command to the pointing component
 
 \medskip }
@@ -3436,7 +3184,6 @@ Send a \emph{stopTracking} command to the pointing component
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stops sending \emph{track} commands.
 
 \medskip }
@@ -3444,7 +3191,6 @@ The pointing component stops sending \emph{track} commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stopped sending tracking commands.
 
 \medskip }
@@ -3455,7 +3201,6 @@ The pointing component stopped sending tracking commands.
 31 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stop} command to the Camera Rotator.
 
 \medskip }
@@ -3465,7 +3210,6 @@ Send a \emph{stop} command to the Camera Rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW stop their rotation.
 
 \medskip }
@@ -3473,7 +3217,6 @@ The Camera Rotator and CCW stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A stop command was sent to the CCW first when the stopTracking command
 was sent to the pointing component and then a stop command was sent to
 the Camera Rotator. This order was established due to sensitivities seen
@@ -3488,7 +3231,6 @@ stopped sending the track commands.
 32 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Using the position telemetry in the EFD}{, verify that the CCW and
 Camera Rotator are moving synchronously.~}
 
@@ -3499,7 +3241,6 @@ Camera Rotator are moving synchronously.~}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator do not exceed the +/- 2.2 degrees.
 
 \medskip }
@@ -3507,7 +3248,6 @@ The CCW and Camera Rotator do not exceed the +/- 2.2 degrees.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 It was seen in the position telemetry in the EFD that the CCW and CCW
 were at similar positions when moving.
 
@@ -3519,7 +3259,6 @@ were at similar positions when moving.
 33 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {\textbf{Synchronous Motion Interlock~}\\[2\baselineskip]Reinsert the
 locking pin for the bar connecting the CCW and Camera Rotator}
 
@@ -3530,7 +3269,6 @@ locking pin for the bar connecting the CCW and Camera Rotator}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The CCW and Camera Rotator are both mechanically and electrically
 connected. }\\[2\baselineskip]
 
@@ -3539,7 +3277,6 @@ connected. }\\[2\baselineskip]
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The locking pin was reinserted.\\[2\baselineskip]For the EFD plot of the
 final run of the Interlock Test, see the attached picture or follow the
 link:\\
@@ -3554,7 +3291,6 @@ link:\\
 34 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {With the Camera Rotator in the enabled/stationary state and both the
 Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 0 degrees.}
@@ -3566,7 +3302,6 @@ Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and the CCW do not move.}
 
 \medskip }
@@ -3574,7 +3309,6 @@ Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Deviation: We used a fixed position track command because the CCW was
 not subscribed to the \emph{positionSet} or the \emph{move} commands.
 
@@ -3583,7 +3317,6 @@ not subscribed to the \emph{positionSet} or the \emph{move} commands.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -3594,7 +3327,6 @@ a track command
 35 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{move} command}
 
 \medskip }
@@ -3604,7 +3336,6 @@ a track command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and the CCW are at 0 degrees.}
 
 \medskip }
@@ -3612,7 +3343,6 @@ a track command
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Deviation: As stated in the step before, we used the \emph{startTrack}
 and \emph{track} commands to move back to 0 degrees.
 
@@ -3621,7 +3351,6 @@ and \emph{track} commands to move back to 0 degrees.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -3632,7 +3361,6 @@ a track command
 36 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{velocitySet} command of +0.02\textbf{~}deg/s.}
 
 \medskip }
@@ -3642,7 +3370,6 @@ a track command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and CCW do not move.}
 
 \medskip }
@@ -3650,7 +3377,6 @@ a track command
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The velocity parameter that was used was actually +0.5deg/s.}
 
 \medskip }
@@ -3661,7 +3387,6 @@ a track command
 37 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{move} command}
 
 \medskip }
@@ -3671,7 +3396,6 @@ a track command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator begins to move while the CCW remains idle.}
 
 \medskip }
@@ -3679,7 +3403,6 @@ a track command
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {Initially, the plan was to send a \emph{moveConstantVelocity} command
 for 0.02deg/s for a \emph{moveDuration~}of 115 seconds to test if the
 positive limit switch of the synchronous motion assembly would be
@@ -3698,7 +3421,6 @@ limit switch.}
 38 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Verify the positive limit switch is tripped on the synchronous motion
 assembly.}\\
 {\\
@@ -3711,7 +3433,6 @@ assembly.}\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The fault triggered on the synchronous motion positive limit switch
 disables the drives on both the Camera Rotator and CCW drives by a Safe
 Torque Off trigger.}
@@ -3721,7 +3442,6 @@ Torque Off trigger.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The positive limit switch was successfully tripped and as a result,
 disabled the drives on the CCW and Camera Rotator.
 
@@ -3733,7 +3453,6 @@ disabled the drives on the CCW and Camera Rotator.
 39 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Verify the location of the positive limit switch is equal to or less
 than 2.2 degrees.
 
@@ -3744,7 +3463,6 @@ than 2.2 degrees.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator is within 2.2 degrees of the CCW.~
 
 \medskip }
@@ -3752,7 +3470,6 @@ The Camera Rotator is within 2.2 degrees of the CCW.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {This was tested at least 3 times and as a result, it was consistently
 seen that the positive limit switch was being tripped at approximately
 2.7 degrees.}
@@ -3762,7 +3479,6 @@ seen that the positive limit switch was being tripped at approximately
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18475}{LVV-18475}~~Synchronous motion positive limit switch over +2.2 degrees
 
 \medskip }
@@ -3772,7 +3488,6 @@ seen that the positive limit switch was being tripped at approximately
 40 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Reset the synchronous motion interlock.
 
 \medskip }
@@ -3782,7 +3497,6 @@ Reset the synchronous motion interlock.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and CCW drives are both on and are in the Enabled
 State.}
 
@@ -3791,7 +3505,6 @@ State.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 To reset the synchronous motion interlock, we had to move the CCW to
 -0.5 degrees in order to get the CAM off the positive limit switch,
 clear the interlock switch from the CCW, clear the Camera Rotator and
@@ -3802,7 +3515,6 @@ then move both back to 0 degrees.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18476}{LVV-18476}~~Synchronous Motion Interlock Reset
 
 \medskip }
@@ -3812,7 +3524,6 @@ then move both back to 0 degrees.
 41 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {With the Camera Rotator in the enabled/stationary state and both the
 Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 0 degrees.}
@@ -3824,7 +3535,6 @@ Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and the CCW do not move.}
 
 \medskip }
@@ -3832,7 +3542,6 @@ Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Deviation: As previously stated, we had to use a fixed track command
 since the CCW doesn't subscribe to the \emph{positionSet} or \emph{move}
 command.
@@ -3842,7 +3551,6 @@ command.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -3853,7 +3561,6 @@ a track command
 42 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{move} command.}
 
 \medskip }
@@ -3863,7 +3570,6 @@ a track command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator moves back to exactly 0 degrees and the CCW does not
 move.}
 
@@ -3872,7 +3578,6 @@ move.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Deviation: As stated in the step before, we used the
 \emph{startTrack~}and \emph{track~}commands to move back to 0 degrees.
 
@@ -3881,7 +3586,6 @@ Deviation: As stated in the step before, we used the
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -3892,7 +3596,6 @@ a track command
 43 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{velocitySet} command of -0.02\textbf{~}deg/s.\\
 }{\\
 }
@@ -3904,7 +3607,6 @@ a track command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and CCW do not move.}
 
 \medskip }
@@ -3912,7 +3614,6 @@ a track command
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The velocity used was -0.5 deg/s
 
 \medskip }
@@ -3923,7 +3624,6 @@ The velocity used was -0.5 deg/s
 44 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{move} command}
 
 \medskip }
@@ -3933,7 +3633,6 @@ The velocity used was -0.5 deg/s
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator begins to move while the CCW remains idle.}
 
 \medskip }
@@ -3941,7 +3640,6 @@ The velocity used was -0.5 deg/s
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 After seeing the positive limit switch was not tripped at +2.2 degrees,
 the negative limit switch was tested by sending
 a\emph{~positionSet~}command of -10 degrees.
@@ -3951,7 +3649,6 @@ a\emph{~positionSet~}command of -10 degrees.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18477}{LVV-18477}~~Synchronous Motion Negative Limit Switch over -2.2 degrees
 
 \medskip }
@@ -3961,7 +3658,6 @@ a\emph{~positionSet~}command of -10 degrees.
 45 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Verify the negative limit switch is tripped on the synchronous motion
 assembly.}\\
 {\\
@@ -3974,7 +3670,6 @@ assembly.}\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The fault triggered on the synchronous motion negative limit switch
 disables the drives on both the Camera Rotator and CCW drives by a Safe
 Torque Off trigger.}
@@ -3984,7 +3679,6 @@ Torque Off trigger.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The negative limit switch synchronous motion assembly was tripped and
 correctly disabled the drives on both the Camera Rotator and CCW.
 
@@ -3996,7 +3690,6 @@ correctly disabled the drives on both the Camera Rotator and CCW.
 46 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Verify the location of the negative limit switch is equal to or less
 than 2.2 degrees.
 
@@ -4007,7 +3700,6 @@ than 2.2 degrees.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator is within 2.2 degrees of the CCW.
 
 \medskip }
@@ -4015,7 +3707,6 @@ The Camera Rotator is within 2.2 degrees of the CCW.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was tested multiple times and the negative limit switch was seen to
 be consistently tripped at -5.19 degrees.
 
@@ -4024,7 +3715,6 @@ be consistently tripped at -5.19 degrees.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18477}{LVV-18477}~~Synchronous Motion Negative Limit Switch over -2.2 degrees
 
 \medskip }
@@ -4034,7 +3724,6 @@ be consistently tripped at -5.19 degrees.
 47 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Reset the synchronous motion interlock.
 
 \medskip }
@@ -4044,7 +3733,6 @@ Reset the synchronous motion interlock.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and CCW drives are both on and are in the Enabled
 State.}
 
@@ -4053,7 +3741,6 @@ State.}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 To reset the synchronous motion interlock, we had to move the CCW to
 -0.5 degrees in order to get the CAM off the positive limit switch,
 clear the interlock switch from the CCW, clear the Camera Rotator and
@@ -4064,7 +3751,6 @@ then move both back to 0 degrees.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18476}{LVV-18476}~~Synchronous Motion Interlock Reset
 
 \medskip }
@@ -4074,7 +3760,6 @@ then move both back to 0 degrees.
 48 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {With the Camera Rotator in the enabled/stationary state and both the
 Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 0 degrees.}
@@ -4086,7 +3771,6 @@ Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator and the CCW do not move.}
 
 \medskip }
@@ -4094,7 +3778,6 @@ Camera Rotator and CCW not moving, send a \emph{positionSet} command of
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 In preparation for the next test, the Camera Rotator was given a track
 command to a fixed position of 0 degrees.
 
@@ -4103,7 +3786,6 @@ command to a fixed position of 0 degrees.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -4114,7 +3796,6 @@ a track command
 49 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Send a \emph{move} command}
 
 \medskip }
@@ -4124,7 +3805,6 @@ a track command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator moves to 0 degrees while the CCW remains idle.}
 
 \medskip }
@@ -4132,7 +3812,6 @@ a track command
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW were both positioned to 0 degrees using the
 \emph{track} command.
 
@@ -4141,7 +3820,6 @@ The Camera Rotator and CCW were both positioned to 0 degrees using the
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -4152,7 +3830,6 @@ a track command
 50 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{{Hard Breaking E-Stop Test}}\\
 {The following steps define what the Jupyter Notebook for this test case
 implements. Executing the Jupyter notebook is the only actual step that
@@ -4165,7 +3842,6 @@ needs to be executed.}\textbf{{~}}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook controls the system to run through the steps below.
 
 \medskip }
@@ -4173,7 +3849,6 @@ The Jupyter notebook controls the system to run through the steps below.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We successfully ran the Jupyter notebook which allowed proper control of
 the system.\\[2\baselineskip]For the EFD plot of the final run of the
 E-STop Test, see the attached picture or follow the link:\\
@@ -4188,7 +3863,6 @@ E-STop Test, see the attached picture or follow the link:\\
 51 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send \emph{trackStart} Command~
 
 \medskip }
@@ -4198,7 +3872,6 @@ Send \emph{trackStart} Command~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator transitions from the Enabled/Stationary state to the
 Enabled/SlewingAndTracking state.
 
@@ -4207,7 +3880,6 @@ Enabled/SlewingAndTracking state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We sent a trackStart to a fixed position through the Ptg component and
 saw that the Camera Rotator successfully transitioned into the
 SlewingAndTracking state.
@@ -4220,7 +3892,6 @@ SlewingAndTracking state.
 52 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{track} command
 
 \medskip }
@@ -4230,7 +3901,6 @@ Send a \emph{track} command
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator starts it's rotation and the CCW synchronizes with
 this rotation.
 
@@ -4239,7 +3909,6 @@ this rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW both begin to follow the track command.
 
 \medskip }
@@ -4250,7 +3919,6 @@ The Camera Rotator and CCW both begin to follow the track command.
 53 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Hit the E-Stop
 
 \medskip }
@@ -4260,7 +3928,6 @@ Hit the E-Stop
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW both stop their rotation.
 
 \medskip }
@@ -4268,7 +3935,6 @@ The Camera Rotator and CCW both stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Once the CCW and Camera Rotator were seen to be moving at their maximum
 velocity, the E-stop was pressed.
 
@@ -4280,7 +3946,6 @@ velocity, the E-stop was pressed.
 54 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Using the position telemetry in the EFD, verify that the CCW and Camera
 Rotator are stopped at the same position.~~
 
@@ -4291,7 +3956,6 @@ Rotator are stopped at the same position.~~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator do not exceed the +/- 2.2 degrees difference
 in position.
 
@@ -4300,7 +3964,6 @@ in position.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW was stopped at 13.1 degrees while the Camera Rotator was stopped
 at 13.84 degrees.~
 
@@ -4312,7 +3975,6 @@ at 13.84 degrees.~
 55 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Shutdown the CCW and Camera Rotator.
 
 \medskip }
@@ -4322,7 +3984,6 @@ Shutdown the CCW and Camera Rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator are shutdown.
 
 \medskip }
@@ -4330,7 +3991,6 @@ The CCW and Camera Rotator are shutdown.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator were not shut down at the end of testing
 because of how long it takes to restart the system; Therefore, the
 E-stop is pressed and the systems are left in FAULT at the end of every
@@ -4448,7 +4108,6 @@ Detailed steps results:
 1 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STARTING THE EUI}\\[2\baselineskip]Double click the Hexapod GUI
 Viewer desktop icon on the computer.
 
@@ -4466,7 +4125,6 @@ Viewer desktop icon on the computer.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A prompt to enter a password is shown.~
 
 \medskip }
@@ -4474,7 +4132,6 @@ A prompt to enter a password is shown.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4486,7 +4143,6 @@ with SAL 4.0 (LSST)~}Test Case.
 2 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Enter the password ``lsst-vnc''
 
 \begin{itemize}
@@ -4504,7 +4160,6 @@ Enter the password ``lsst-vnc''
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The EUI is in the Offline State/PublishOnly substate and is able to
 publish through SAL but cannot receive commands.
 
@@ -4513,7 +4168,6 @@ publish through SAL but cannot receive commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4525,7 +4179,6 @@ with SAL 4.0 (LSST)~}Test Case.
 3 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE/AVAILABLESTATE}\\
 On the Main tab, select the ``Offline SubState Cmd'' field in the
 Commands to Send section, set the Offline SubState Triggers to ``System
@@ -4539,7 +4192,6 @@ Ready'' and click on the Send Command button.\\
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions from the OfflineState/PublishOnly substate to the
 OfflineState/AvailableState
 substate.\\[2\baselineskip]\includegraphics[width=1.79167in]{jira_imgs/1007.png}
@@ -4549,7 +4201,6 @@ substate.\\[2\baselineskip]\includegraphics[width=1.79167in]{jira_imgs/1007.png}
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4561,7 +4212,6 @@ with SAL 4.0 (LSST)~}Test Case.
 4 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{SWITCHING TO DDS MODE}\\
 \includegraphics[width=1.79167in]{jira_imgs/1014.png}\\
 If the Command Source does not show DDS, go to the Parameters tab,
@@ -4579,7 +4229,6 @@ Source must show DDS in order to receive DDS commands.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system is capable of receiving/responding to DDS commands.
 
 \medskip }
@@ -4587,7 +4236,6 @@ The system is capable of receiving/responding to DDS commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4599,7 +4247,6 @@ with SAL 4.0 (LSST)~}Test Case.
 5 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{OFFLINESTATE -\textgreater{} STANDBYSTATE}\\
 The system receives an \emph{enterControl State Transition} command
 through DDS.
@@ -4611,7 +4258,6 @@ through DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the StandbyState and is capable of
 receiving/responding to DDS commands.\\
 \includegraphics[width=4.68750in]{jira_imgs/1018.png}
@@ -4621,7 +4267,6 @@ receiving/responding to DDS commands.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4633,7 +4278,6 @@ with SAL 4.0 (LSST)~}Test Case.
 6 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{STANDBYSTATE -\textgreater{} DISABLEDSTATE}\\
 From the StandbyState, send a \emph{start} command through the DDS.
 
@@ -4644,7 +4288,6 @@ From the StandbyState, send a \emph{start} command through the DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into DisabledState after receiving/responding to
 DDS command and the wrapper in the PXI real time controller looks for
 the configuration file.\\
@@ -4657,7 +4300,6 @@ transition into a Fault State
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4669,7 +4311,6 @@ with SAL 4.0 (LSST)~}Test Case.
 7 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{DISABLEDSTATE -\textgreater{} ENABLEDSTATE}\\
 From the DisabledState, send an \emph{enable state} command through the
 DDS.
@@ -4681,7 +4322,6 @@ DDS.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions into the EnabledState/Stationary substate, the
 motor drives are enabled, motor brakes are released and the system is
 capable of receiving/responding to DDS commands.\\
@@ -4692,7 +4332,6 @@ capable of receiving/responding to DDS commands.\\
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4704,7 +4343,6 @@ with SAL 4.0 (LSST)~}Test Case.
 8 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{FAULTSTATE}\\
 If a Fault occurs in any of the other states, the system will
 automatically transition to the Fault State. While in the Fault state,
@@ -4719,7 +4357,6 @@ the safety relay switch and send a \emph{clearError} command.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system transitions back to the OfflineState/PublishOnly substate and
 is not capable of receiving/responding to DDS commands. (Go back to Step
 3)\\
@@ -4730,7 +4367,6 @@ is not capable of receiving/responding to DDS commands. (Go back to Step
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 This was previously verified in the\emph{~Integration of Camera Rotator
 with SAL 4.0 (LSST)~}Test Case.
 
@@ -4742,7 +4378,6 @@ with SAL 4.0 (LSST)~}Test Case.
 9 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{{Pointing Component - Basic Control}}\\
 {Insert the locking pin that so that the CCW moves synchronously to the
 Camera Rotator.}
@@ -4754,7 +4389,6 @@ Camera Rotator.}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator move synchronously to each other.
 
 \medskip }
@@ -4762,7 +4396,6 @@ The CCW and Camera Rotator move synchronously to each other.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The locking pin for the temporary linkage between the CCW and the Camera
 Rotator remained inserted.
 
@@ -4774,7 +4407,6 @@ Rotator remained inserted.
 10 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 The following steps define what the Jupyter Notebook for this test case
 implements. Executing the Jupyter notebook is the only actual step that
 needs to be executed.
@@ -4786,7 +4418,6 @@ needs to be executed.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook controls the system to run through the steps below.
 
 \medskip }
@@ -4794,7 +4425,6 @@ The Jupyter notebook controls the system to run through the steps below.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook was run successfully and allowed control of the
 system.\\[2\baselineskip]See the attached picture from the Basic Track
 Test Scenario or follow the link:\\
@@ -4808,7 +4438,6 @@ Test Scenario or follow the link:\\
 11 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Bring the Camera Rotator and the Pointing Component to the Enabled
 State.
 
@@ -4819,7 +4448,6 @@ State.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and Pointing Component are in the Enabled State.
 
 \medskip }
@@ -4827,7 +4455,6 @@ The Camera Rotator and Pointing Component are in the Enabled State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and Pointing component were successfully transitioned
 into the Enabled State.
 
@@ -4839,7 +4466,6 @@ into the Enabled State.
 12 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{trackStart} command to the rotator.~
 
 \medskip }
@@ -4849,7 +4475,6 @@ Send a \emph{trackStart} command to the rotator.~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator transitions from the Enabled/Stationary state to the
 Enabled/SlewingAndTracking state.
 
@@ -4858,7 +4483,6 @@ Enabled/SlewingAndTracking state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator successfully transitioned into the SlewingAndTracking
 state as seen on the GUI.
 
@@ -4870,7 +4494,6 @@ state as seen on the GUI.
 13 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{track} command via the pointing component to track.
 
 \medskip }
@@ -4880,7 +4503,6 @@ Send a \emph{track} command via the pointing component to track.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator begins to track for 30 seconds.~
 
 \medskip }
@@ -4888,7 +4510,6 @@ The Camera Rotator begins to track for 30 seconds.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW began to move synchronously.
 
 \medskip }
@@ -4899,7 +4520,6 @@ The Camera Rotator and CCW began to move synchronously.
 14 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stopTracking} command to the pointing component
 
 \medskip }
@@ -4909,7 +4529,6 @@ Send a \emph{stopTracking} command to the pointing component
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stops sending \emph{track} commands.
 
 \medskip }
@@ -4917,7 +4536,6 @@ The pointing component stops sending \emph{track} commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Pointing component stopped sending track commands.
 
 \medskip }
@@ -4928,7 +4546,6 @@ The Pointing component stopped sending track commands.
 15 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stop} command to the Camera Rotator.
 
 \medskip }
@@ -4938,7 +4555,6 @@ Send a \emph{stop} command to the Camera Rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW stop their rotation.
 
 \medskip }
@@ -4946,7 +4562,6 @@ The Camera Rotator and CCW stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A stop command was sent to the CCW first when the stopTracking command
 was sent to the pointing component and then a stop command was sent to
 the Camera Rotator. This order was established due to sensitivities seen
@@ -4961,7 +4576,6 @@ stopped sending the track commands.
 16 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 {Using the position telemetry in the EFD}{, verify that the CCW and
 Camera Rotator are moving synchronously.~}
 
@@ -4972,7 +4586,6 @@ Camera Rotator are moving synchronously.~}
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The CCW and Camera Rotator do not exceed the +/- 2.2 degrees.
 
 \medskip }
@@ -4980,7 +4593,6 @@ The CCW and Camera Rotator do not exceed the +/- 2.2 degrees.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 It was seen in the position telemetry in the EFD that the CCW and CCW
 were at similar positions when moving.
 
@@ -4992,7 +4604,6 @@ were at similar positions when moving.
 17 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{{Pointing Component- High Rotation Stress Test}}\\
 The following steps define what the Jupyter Notebook for this test case
 implements. Executing the Jupyter notebook is the only actual step that
@@ -5005,7 +4616,6 @@ needs to be executed.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook controls the system to run through the steps below.
 
 \medskip }
@@ -5013,7 +4623,6 @@ The Jupyter notebook controls the system to run through the steps below.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook was successfully run and correctly controls the
 system.\\[2\baselineskip]See the attached picture of the High Rotation
 Stress Test Scenario or follow the link:\\
@@ -5028,7 +4637,6 @@ Stress Test Scenario or follow the link:\\
 18 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Bring the Camera Rotator and the Pointing Component to the Enabled
 State.
 
@@ -5039,7 +4647,6 @@ State.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and Pointing Component are in the Enabled State.
 
 \medskip }
@@ -5047,7 +4654,6 @@ The Camera Rotator and Pointing Component are in the Enabled State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator was successfully transitioned into the Enabled State.
 
 \medskip }
@@ -5058,7 +4664,6 @@ The Camera Rotator was successfully transitioned into the Enabled State.
 19 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{trackStart} command to the Rotator~
 
 \medskip }
@@ -5068,7 +4673,6 @@ Send a \emph{trackStart} command to the Rotator~
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Rotator transitions from the Enabled State/Stationary substate to
 the Enabled State/Slewing and Tracking Substate.
 
@@ -5077,7 +4681,6 @@ the Enabled State/Slewing and Tracking Substate.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator was correctly transitioned into the
 SlewingAndTracking substate as seen on the GUI.
 
@@ -5089,7 +4692,6 @@ SlewingAndTracking substate as seen on the GUI.
 20 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{track} command to +90 degrees.
 
 \medskip }
@@ -5099,7 +4701,6 @@ Send a \emph{track} command to +90 degrees.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator begins to track to +90 degrees.
 
 \medskip }
@@ -5107,7 +4708,6 @@ The Camera Rotator begins to track to +90 degrees.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW simultaneously moved toward +90 degrees and
 started tracking.
 
@@ -5119,7 +4719,6 @@ started tracking.
 21 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 While the Camera Rotator is at+90 degrees, send a new \emph{track}
 command to -90 degrees at 0.068deg/s.
 
@@ -5130,7 +4729,6 @@ command to -90 degrees at 0.068deg/s.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW synchronously move at full speed from +90
 degrees to -90 degrees.
 
@@ -5139,7 +4737,6 @@ degrees to -90 degrees.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The system reached a FAULT as the Pointing Component's demand was -90
 degrees as expected, the Camera Rotator's demand was of 0 degrees
 although its position never changed, and the CCW started to move in the
@@ -5150,7 +4747,6 @@ negative direction and tripped the interlock.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/FRACAS-26}{FRACAS-26}~~Camera Rotator GUI Crash
 
 \medskip }
@@ -5160,7 +4756,6 @@ negative direction and tripped the interlock.
 22 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stop} command to the Camera Rotator.
 
 \medskip }
@@ -5170,7 +4765,6 @@ Send a \emph{stop} command to the Camera Rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW stop their rotation.
 
 \medskip }
@@ -5178,7 +4772,6 @@ The Camera Rotator and CCW stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW have already been stopped as they reached a
 FAULT.
 
@@ -5187,7 +4780,6 @@ FAULT.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/FRACAS-26}{FRACAS-26}~~Camera Rotator GUI Crash
 
 \medskip }
@@ -5197,7 +4789,6 @@ FAULT.
 23 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{{Pointing Component - Filter Change}}\\
 The following steps define what the Jupyter Notebook for this test case
 implements. Executing the Jupyter notebook is the only actual step that
@@ -5210,7 +4801,6 @@ needs to be executed.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook controls the system to run through the steps below.
 
 \medskip }
@@ -5218,7 +4808,6 @@ The Jupyter notebook controls the system to run through the steps below.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook was successfully run and correctly controls the
 system.\\[2\baselineskip]See the attached picture of the Filter Change
 Test Scenario or follow the link:\\
@@ -5233,7 +4822,6 @@ Test Scenario or follow the link:\\
 24 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 With the Camera Rotator and CCW in the Enabled state, send a
 \emph{trackStart} command to the rotator.
 
@@ -5244,7 +4832,6 @@ With the Camera Rotator and CCW in the Enabled state, send a
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator transitions from the Enabled/Stationary state to the
 Enabled/SlewingAndTracking state.
 
@@ -5253,7 +4840,6 @@ Enabled/SlewingAndTracking state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW correctly transitioned into the
 Enabled/Stationary state.
 
@@ -5265,7 +4851,6 @@ Enabled/Stationary state.
 25 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{track} command via the pointing component to track in the
 positive direction.
 
@@ -5276,7 +4861,6 @@ positive direction.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator starts it's rotation in the positive direction and
 the CCW synchronizes with this rotation.
 
@@ -5285,7 +4869,6 @@ the CCW synchronizes with this rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW both started moving synchronously, following
 the \emph{track} command.
 
@@ -5297,7 +4880,6 @@ the \emph{track} command.
 26 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stop} command to the rotator.
 
 \medskip }
@@ -5307,7 +4889,6 @@ Send a \emph{stop} command to the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW stop their rotation.
 
 \medskip }
@@ -5315,7 +4896,6 @@ The Camera Rotator and CCW stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A \emph{stopTracking~}command was sent to the pointing component first
 and then followed by a \emph{stop~}command sent to the CCW. Then
 a~\emph{stop~}command could be sent to the Camera Rotator.
@@ -5325,7 +4905,6 @@ a~\emph{stop~}command could be sent to the Camera Rotator.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18478}{LVV-18478}~~CCW + Camera Rotator stop tracking process
 
 \medskip }
@@ -5335,7 +4914,6 @@ a~\emph{stop~}command could be sent to the Camera Rotator.
 27 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a stopTracking command to the pointing component.
 
 \medskip }
@@ -5345,7 +4923,6 @@ Send a stopTracking command to the pointing component.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stops sending \emph{track} commands.
 
 \medskip }
@@ -5353,7 +4930,6 @@ The pointing component stops sending \emph{track} commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The order to stop the tracking of the pointing component, CCW and Camera
 Rotator was established due to sensitivies seen with the CCW to
 receive~\emph{stop~}commands after the pointing component stopped
@@ -5364,7 +4940,6 @@ sending~\emph{track~}commands.~
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18478}{LVV-18478}~~CCW + Camera Rotator stop tracking process
 
 \medskip }
@@ -5374,7 +4949,6 @@ sending~\emph{track~}commands.~
 28 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a positionSet command with and angle of 0.0 deg.
 
 \medskip }
@@ -5384,7 +4958,6 @@ Send a positionSet command with and angle of 0.0 deg.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW do \textbf{NOT} move.
 
 \medskip }
@@ -5392,7 +4965,6 @@ The Camera Rotator and CCW do \textbf{NOT} move.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {We needed to send a fixed tracking command to zero degrees because the
 CCW does not subscribe to the \emph{positionSet} command.}
 
@@ -5401,7 +4973,6 @@ CCW does not subscribe to the \emph{positionSet} command.}
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -5412,7 +4983,6 @@ a track command
 29 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{move} command to rotate to the 0.0 deg position.
 
 \medskip }
@@ -5422,7 +4992,6 @@ Send a \emph{move} command to rotate to the 0.0 deg position.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW rotate to the 0.0 deg position. The Camera
 Rotator publishes the inPosition event.
 
@@ -5431,7 +5000,6 @@ Rotator publishes the inPosition event.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 We needed to send a fixed tracking command to zero degrees because the
 CCW does not subscribe to the \emph{move} command.
 
@@ -5440,7 +5008,6 @@ CCW does not subscribe to the \emph{move} command.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18473}{LVV-18473}~~The CCW and Camera Rotator are only able to be moved synchronously with
 a track command
 
@@ -5451,7 +5018,6 @@ a track command
 30 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Wait for 120 sec.
 
 \medskip }
@@ -5461,7 +5027,6 @@ Wait for 120 sec.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW do not move for 120 sec.
 
 \medskip }
@@ -5469,7 +5034,6 @@ The Camera Rotator and CCW do not move for 120 sec.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator slewed to zero degrees for 30 seconds and waited 90
 seconds for the filter change.
 
@@ -5481,7 +5045,6 @@ seconds for the filter change.
 31 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{trackStart} command to the rotator.
 
 \medskip }
@@ -5491,7 +5054,6 @@ Send a \emph{trackStart} command to the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator transitions from the Enabled/Stationary state to the
 Enabled/SlewingAndTracking state.
 
@@ -5500,7 +5062,6 @@ Enabled/SlewingAndTracking state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator started to perform its second track but a
 \emph{stopTracking~}command was necessary in between each track.}
 
@@ -5512,7 +5073,6 @@ Enabled/SlewingAndTracking state.
 32 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{track} command via the pointing component in the negative
 direction.
 
@@ -5523,7 +5083,6 @@ direction.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator starts it's rotation in the negative direction and
 the CCW synchronizes with this rotation.
 
@@ -5532,7 +5091,6 @@ the CCW synchronizes with this rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {The Camera Rotator successfully fulfilled this track.}
 
 \medskip }
@@ -5543,7 +5101,6 @@ the CCW synchronizes with this rotation.
 33 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stop} command to the rotator.
 
 \medskip }
@@ -5553,7 +5110,6 @@ Send a \emph{stop} command to the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW stop their rotation.
 
 \medskip }
@@ -5561,7 +5117,6 @@ The Camera Rotator and CCW stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A \emph{stopTracking~}command was sent to the pointing component first
 and then followed by a \emph{stop~}command sent to the CCW. Then a
 \emph{stop~}command could be sent to the Camera Rotator.
@@ -5571,7 +5126,6 @@ and then followed by a \emph{stop~}command sent to the CCW. Then a
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18478}{LVV-18478}~~CCW + Camera Rotator stop tracking process
 
 \medskip }
@@ -5581,7 +5135,6 @@ and then followed by a \emph{stop~}command sent to the CCW. Then a
 34 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a stopTracking command to the pointing component.
 
 \medskip }
@@ -5591,7 +5144,6 @@ Send a stopTracking command to the pointing component.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stops sending \emph{track} commands.
 
 \medskip }
@@ -5599,7 +5151,6 @@ The pointing component stops sending \emph{track} commands.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The order to stop the tracking of the pointing component, CCW and Camera
 Rotator was established due to sensitivies seen with the CCW to receive
 \emph{stop~}commands after the pointing component stopped sending
@@ -5610,7 +5161,6 @@ Rotator was established due to sensitivies seen with the CCW to receive
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/LVV-18478}{LVV-18478}~~CCW + Camera Rotator stop tracking process
 
 \medskip }
@@ -5620,7 +5170,6 @@ Rotator was established due to sensitivies seen with the CCW to receive
 35 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 \textbf{{Pointing Component - Typical Night}}\\
 The following steps define what the Jupyter Notebook for this test case
 implements. Executing the Jupyter notebook is the only actual step that
@@ -5633,7 +5182,6 @@ needs to be executed.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook controls the system run through the steps below.
 
 \medskip }
@@ -5641,7 +5189,6 @@ The Jupyter notebook controls the system run through the steps below.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Jupyter notebook was successfully run and correctly controls the
 system.\\[2\baselineskip]See the attached picture of the Observing Night
 Scenario or follow the link:\\
@@ -5656,7 +5203,6 @@ Scenario or follow the link:\\
 36 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Bring the Camera Rotator and the Pointing Component to the Enabled
 State.
 
@@ -5667,7 +5213,6 @@ State.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and Pointing Component are in the Enabled State.
 
 \medskip }
@@ -5675,7 +5220,6 @@ The Camera Rotator and Pointing Component are in the Enabled State.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW were correctly transitioned into the Enabled
 state
 
@@ -5687,7 +5231,6 @@ state
 37 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{trackStart} command to the rotator.
 
 \medskip }
@@ -5697,7 +5240,6 @@ Send a \emph{trackStart} command to the rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator transitions from the Enabled/Stationary state to the
 Enabled/SlewingAndTracking state.
 
@@ -5706,7 +5248,6 @@ Enabled/SlewingAndTracking state.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW both successfully transitioned into the
 SlewingAndTracking sub-state.
 
@@ -5718,7 +5259,6 @@ SlewingAndTracking sub-state.
 38 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 The Scheduler commands the Pointing component to track simulated by a
 table written in the Jupyter notebook.\\[2\baselineskip]
 
@@ -5729,7 +5269,6 @@ table written in the Jupyter notebook.\\[2\baselineskip]
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator begins to track.
 
 \medskip }
@@ -5737,7 +5276,6 @@ The Camera Rotator begins to track.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 {We started having more GUI problems; The GUI kept crashing and at
 different points during each attempt.}
 
@@ -5746,7 +5284,6 @@ different points during each attempt.}
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/FRACAS-26}{FRACAS-26}~~Camera Rotator GUI Crash
 
 \medskip }
@@ -5756,7 +5293,6 @@ different points during each attempt.}
 39 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Verify that the Camera Rotator is following the look up table of visits
 one after the other by looking at chronograf.
 
@@ -5767,7 +5303,6 @@ one after the other by looking at chronograf.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 After one observation is performed, the Camera Rotator begins the track
 of the next target right after the last active visit.
 
@@ -5776,7 +5311,6 @@ of the next target right after the last active visit.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 Deviation: We had to include \emph{stopTracking} commands in between
 each track in order to complete the full test.
 
@@ -5785,7 +5319,6 @@ each track in order to complete the full test.
 
  & Issues found executing this step:  \\
  & \begin{minipage}[t]{13cm}{\footnotesize
-\smallskip
 \href{https://jira.lsstcorp.org/browse/FRACAS-26}{FRACAS-26}~~Camera Rotator GUI Crash
 
 \medskip }
@@ -5795,7 +5328,6 @@ each track in order to complete the full test.
 40 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stopTracking} command to the pointing component.
 
 \medskip }
@@ -5805,7 +5337,6 @@ Send a \emph{stopTracking} command to the pointing component.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stops sending \emph{track} commands.~
 
 \medskip }
@@ -5813,7 +5344,6 @@ The pointing component stops sending \emph{track} commands.~
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The pointing component stopped sending \emph{track} commands.
 
 \medskip }
@@ -5824,7 +5354,6 @@ The pointing component stopped sending \emph{track} commands.
 41 & Description \\
  & \begin{minipage}[t]{15cm}
 {\footnotesize
-\smallskip
 Send a \emph{stop} command to the Camera Rotator.
 
 \medskip }
@@ -5834,7 +5363,6 @@ Send a \emph{stop} command to the Camera Rotator.
 
  & Expected Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 The Camera Rotator and CCW stop their rotation.
 
 \medskip }
@@ -5842,7 +5370,6 @@ The Camera Rotator and CCW stop their rotation.
 
  & Actual Result \\
  & \begin{minipage}[t]{15cm}{\footnotesize
-\smallskip
 A \emph{stop} command was sent to the CCW first when the
 \emph{stopTracking} command was sent to the pointing component and then
 a \emph{stop} command was sent to the Camera Rotator. This order was
