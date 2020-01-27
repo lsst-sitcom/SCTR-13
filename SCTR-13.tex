@@ -43,7 +43,7 @@ an LSST milestone pertaining to the System Engineering Subsystem.
 \subsection{Objectives}
 \label{sect:objectives}
 
-The purpose of this test plan is to verify combined control and combined
+ The purpose of this test plan is to verify combined control and combined
 interlocks of the Camera Rotator integrated with the Camera Cable Wrap
 at the Summit facility, as defined in \citeds{LTS-160}, \citeds{LTS-206} and \citeds{LTS-218}. The
 combined control will be accomplished through SAL v4.0 utilizing the
@@ -64,7 +64,7 @@ must be met in order to execute this test campaign:
 \subsection{System Overview}
 \label{sect:systemoverview}
 
-The Camera Cable Wrap is mounted to one side of the Integrating
+ The Camera Cable Wrap is mounted to one side of the Integrating
 Structure with the Camera Hexapod and Rotator installed on the other
 side of the Integrating Structure. This assembly is mounted onto the
 Camera Cart when it is off of the telescope. The primary function of the
@@ -104,13 +104,13 @@ The current status of test plan LVV-P58 in Jira is \textbf{ Approved }.
 
 \subsection{Verification Environment}
 \label{sect:hwconf}
-  The Camera Rotator integrated with the Camera Hexapod and Camera Cable
+   The Camera Rotator integrated with the Camera Hexapod and Camera Cable
 Wrap on the Camera Cart will be verified in a climate controlled
 environment on the 3rd floor of the Summit Facility.
 
 
   \subsection{Entry Criteria}
-  In order to test the Camera Rotator + CCW functionality, the following
+   In order to test the Camera Rotator + CCW functionality, the following
 criteria must be met first:
 
 \begin{itemize}
@@ -131,7 +131,7 @@ criteria must be met first:
 
 
   \subsection{Exit Criteria}
-  In order for this event to be considered complete, the following
+   In order for this event to be considered complete, the following
 criteria must be met:
 
 \begin{itemize}
@@ -160,7 +160,7 @@ criteria must be met:
 
 
   \subsection{PMCS Activity}
-  See Epics in Traceability Tab
+   See Epics in Traceability Tab
 
 
 \newpage
@@ -183,7 +183,7 @@ The personnel involved in the test campaign is shown in the following table.
 & {\small Kevin Siruno } & {\small Kevin Siruno } &
 \begin{minipage}[]{6cm}
 \smallskip
-{\small (1) Software Engineer\\
+{\small  (1) Software Engineer\\
 (1) Hardware Engineer
  }
 \medskip
@@ -193,7 +193,7 @@ The personnel involved in the test campaign is shown in the following table.
 & {\small Kevin Siruno } & {\small Kevin Siruno } &
 \begin{minipage}[]{6cm}
 \smallskip
-{\small (1) Software Engineer\\
+{\small  (1) Software Engineer\\
 (1) Hardware Engineer\\
 (1) Systems Engineer
  }
@@ -204,7 +204,7 @@ The personnel involved in the test campaign is shown in the following table.
 & {\small Kevin Siruno } & {\small Kevin Siruno } &
 \begin{minipage}[]{6cm}
 \smallskip
-{\small (1) Software Engineer\\
+{\small  (1) Software Engineer\\
 (1) Hardware Engineer\\
 (1) Systems Engineer
  }
@@ -223,10 +223,10 @@ The personnel involved in the test campaign is shown in the following table.
 
 \begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
 \toprule
-\multicolumn{3}{l}{ Test Plan {\bf LVV-P58: CCW + Camera Rotator Interface Verification on Camera Cart
+\multicolumn{3}{l}{ Test Plan {\bf LVV-P58:  CCW + Camera Rotator Interface Verification on Camera Cart
  }} & Approved \\\hline
 
-  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C109: Camera Rotator + CCW Integration
+  \multicolumn{3}{l}{ Test Cycle {\bf LVV-C109:  Camera Rotator + CCW Integration
  }} & Done \\\hline
 
   {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
@@ -290,7 +290,7 @@ The personnel involved in the test campaign is shown in the following table.
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
 
-Overall, the result of the test campaign was a FAIL as each test case in
+ Overall, the result of the test campaign was a FAIL as each test case in
 this event had a failure that needs to be
 fixed.\\[2\baselineskip]\emph{Integration of Camera Rotator with SAL 4.0
 (LSST)} - Nearly all of the Camera Rotator software requirements were
@@ -341,7 +341,7 @@ the Camera Rotator GUI crashed again.~
 \subsection{Recommended Improvements}
 \label{sect:recommendations}
 
-The following action items were generated in order to improve the
+ The following action items were generated in order to improve the
 system:
 
 \begin{itemize}
@@ -404,14 +404,14 @@ system:
 
 \subsection{Test Cycle LVV-C109 }
 
-Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C109}{Camera Rotator + CCW Integration
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C109}{ Camera Rotator + CCW Integration
 }} in Jira.
 
-Camera Rotator + CCW Integration
+ Camera Rotator + CCW Integration
 \\
 Status: Done
 
-This test cycle will encompass all the test cases pertaining to the
+ This test cycle will encompass all the test cases pertaining to the
 testing of the CCW Integration with the Camera rotator and the camera
 cart.
 
@@ -424,13 +424,13 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C109 Test Cycle}
 
-\paragraph{Test Case LVV-T1602 - Integration of Camera Rotator with SAL 4.0 (LSST)
+\paragraph{Test Case LVV-T1602 -  Integration of Camera Rotator with SAL 4.0 (LSST)
  }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1602}{\textit{ LVV-T1602 } }
 test case in Jira.
 
-The objective of this test case is to verify the software requirements
+ The objective of this test case is to verify the software requirements
 of the camera rotator, as defined in \citeds{LTS-160} \& \citeds{LTS-206}, utilizing
 Russell Owen's code. This test case will only exercise the functionality
 that was executed previously and meets the following criteria:
@@ -463,7 +463,7 @@ how to operate the rotator.\\[2\baselineskip]
 
 
 \textbf{ Preconditions}:\\
-Prior to the execution of this test case, the following Summit tasks
+ Prior to the execution of this test case, the following Summit tasks
 must be completed:
 
 \begin{itemize}
@@ -2216,13 +2216,13 @@ through the E-stop.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T1569 - Integrated CCW + HR Interlock Test
+\paragraph{Test Case LVV-T1569 -  Integrated CCW + HR Interlock Test
  }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1569}{\textit{ LVV-T1569 } }
 test case in Jira.
 
-The objective of this test case is to verify the interlocks of the
+ The objective of this test case is to verify the interlocks of the
 integrated CCW and Camera Rotator. This test case will exercise the
 functionality of the combined interlock system between the CCW and the
 Camera Rotator and meets the following criteria:
@@ -2252,7 +2252,7 @@ integrated.
 
 
 \textbf{ Preconditions}:\\
-Prior to the execution of this test case to verify the interlocks of the
+ Prior to the execution of this test case to verify the interlocks of the
 CCW + HR, the following Summit tasks must be completed:\\
 
 \begin{itemize}
@@ -4003,13 +4003,13 @@ day.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T1588 - Pointing Component Control Test
+\paragraph{Test Case LVV-T1588 -  Pointing Component Control Test
  }\mbox{}\\
 
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1588}{\textit{ LVV-T1588 } }
 test case in Jira.
 
-The objective of this test case is to verify the combined control of the
+ The objective of this test case is to verify the combined control of the
 integrated CCW and Camera Rotator via the LSST pointing component as
 specified in \citeds{LTS-218}. This test case will exercise the functionality of
 the synchronized CCW and Camera Rotator during tracking and move
@@ -4052,7 +4052,7 @@ This test case will execute 4 scenarios:
 
 
 \textbf{ Preconditions}:\\
-Prior to the execution of this test case to verify the pointing
+ Prior to the execution of this test case to verify the pointing
 component of the CCW + Camera Rotator, the following Summit tasks must
 be completed:
 
