@@ -235,7 +235,14 @@ The personnel involved in the test campaign is shown in the following table.
     & Fail &
     \begin{minipage}[]{9cm}
     \smallskip
-    
+     Overall, the test campaign for the integration of the Camera Rotator
+with SAL 4.0 was seen as a FAIL. We observed an issue with the
+\emph{trackStart~}command where the history of the previous
+\emph{trackStart~}command needed to be cleared in order for the system
+to calculate the trajectory for a new command. Otherwise, the system
+would continue to calculate the original command and allow for a demand
+to be given that was out of acceptable range.~
+
     \medskip
     \end{minipage}
     &
@@ -248,7 +255,16 @@ The personnel involved in the test campaign is shown in the following table.
     & Fail &
     \begin{minipage}[]{9cm}
     \smallskip
-    
+     Overall, the test campaign for the CCW + HR interlock integration was a
+FAIL. We found that we were unable to synchronously move the CCW and
+Camera Rotator with just a \emph{move~}command and instead had to use a
+\emph{track~}command. Then when the synchronous motion limit switches
+were tested, both the positive and negative limit switches were found to
+be over the +/-2.2degree limit. Finally, to reset the limit switches,
+the CCW had to be moved to -0.5 degrees so that the CAM would not be in
+contact with the positive limit switch and allow the system to be
+cleared of the FAULT.~
+
     \medskip
     \end{minipage}
     &
@@ -268,7 +284,12 @@ The personnel involved in the test campaign is shown in the following table.
     & Fail &
     \begin{minipage}[]{9cm}
     \smallskip
-    
+     The Pointing Component test, made up of 4 total scenarios, was overall
+seen as a FAIL. In addition to the previously mentioned synchronous
+track issue, there were also issues with how the synchronous track was
+stopped and the Camera Rotator GUI crashing during the Typical Night
+Scenario and High Rotation Stress Test Scenario.
+
     \medskip
     \end{minipage}
     &
@@ -450,13 +471,13 @@ that was executed previously and meets the following criteria:
 The software functional requirements were previously re-verified during
 a test campaign at the Summit without the use of SAL. This test is meant
 to confirm that the Camera Rotator is functioning correctly with SAL 4.0
-using Russel's new rotator CSC code based on salobj. The test procedure
+using Russell's new rotator CSC code based on salobj. The test procedure
 used during the previous testing without SAL was the \emph{LSST
 Hexapods-Rotator Software Acceptance Test Procedure.~}The test steps of
 this test case are taken directly from that document on how to perform
 the test in a similar way with the use of SAL.\\[2\baselineskip]See the
 \emph{New Rotator CSC Test in SLAC at 10/17/2019~}linked in the
-Traceability tab for the results of Russel's test of the events and
+Traceability tab for the results of Russell's test of the events and
 telemetry with the bare rotator in SLAC.\\[2\baselineskip]See the
 attached \emph{LSST Rotator Operator's Manual} for more information on
 how to operate the rotator.\\[2\baselineskip]
@@ -514,7 +535,14 @@ must be completed:
 
 Execution status: {\bf Fail }
 
-Final comment:\\
+Final comment:\\ Overall, the test campaign for the integration of the Camera Rotator
+with SAL 4.0 was seen as a FAIL. We observed an issue with the
+\emph{trackStart~}command where the history of the previous
+\emph{trackStart~}command needed to be cleared in order for the system
+to calculate the trajectory for a new command. Otherwise, the system
+would continue to calculate the original command and allow for a demand
+to be given that was out of acceptable range.~
+
 
 
 Detailed steps results:
@@ -2312,7 +2340,16 @@ CCW + HR, the following Summit tasks must be completed:\\
 
 Execution status: {\bf Fail }
 
-Final comment:\\
+Final comment:\\ Overall, the test campaign for the CCW + HR interlock integration was a
+FAIL. We found that we were unable to synchronously move the CCW and
+Camera Rotator with just a \emph{move~}command and instead had to use a
+\emph{track~}command. Then when the synchronous motion limit switches
+were tested, both the positive and negative limit switches were found to
+be over the +/-2.2degree limit. Finally, to reset the limit switches,
+the CCW had to be moved to -0.5 degrees so that the CAM would not be in
+contact with the positive limit switch and allow the system to be
+cleared of the FAULT.~
+
 
 
 Detailed steps results:
@@ -4119,7 +4156,12 @@ be completed:
 
 Execution status: {\bf Fail }
 
-Final comment:\\
+Final comment:\\ The Pointing Component test, made up of 4 total scenarios, was overall
+seen as a FAIL. In addition to the previously mentioned synchronous
+track issue, there were also issues with how the synchronous track was
+stopped and the Camera Rotator GUI crashing during the Typical Night
+Scenario and High Rotation Stress Test Scenario.
+
 
 
 Detailed steps results:
